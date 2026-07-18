@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Marathon Mod Evaluator</title>
-  <meta name="description" content="Evaluate live-verified Marathon mods against the Magnum MC.">
+  <meta name="description" content="Compare live-verified Marathon weapon mods for the Magnum MC.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="shell">
     <header class="hero">
       <div>
-        <p class="eyebrow">Season 2 · Mouse & Keyboard</p>
+        <p class="eyebrow">Version 0.2 · Season 2 · Mouse & Keyboard</p>
         <h1>Marathon Mod Evaluator</h1>
-        <p class="lede">Compare live-verified Magnum MC mods and estimate whether a raid drop is worth keeping.</p>
+        <p class="lede">Compare two live-verified Magnum MC mods, inspect resulting stats, and generate a clean JSON record for the next verified drop.</p>
       </div>
       <div class="status-card">
         <span class="status-dot"></span>
@@ -27,96 +27,156 @@
     <section class="panel">
       <div class="panel-header">
         <div>
-          <p class="eyebrow">Weapon</p>
+          <p class="eyebrow">Weapon profile</p>
           <h2 id="weapon-name">Magnum MC</h2>
         </div>
-        <div class="stat-pill">
-          Precision damage
-          <strong id="precision-damage">—</strong>
+        <div class="header-metrics">
+          <div class="stat-pill">Precision damage <strong id="precision-damage">—</strong></div>
+          <div class="stat-pill">Verified mods <strong id="verified-count">—</strong></div>
         </div>
       </div>
       <div id="base-stats" class="stat-grid"></div>
     </section>
 
-    <section class="two-column">
-      <article class="panel">
-        <div class="panel-header">
-          <div>
-            <p class="eyebrow">Verified inventory</p>
-            <h2>Select a mod</h2>
-          </div>
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Side-by-side analysis</p>
+          <h2>Compare two mods</h2>
         </div>
-        <label class="field">
-          <span>Mod</span>
-          <select id="mod-select"></select>
-        </label>
-        <div id="selected-mod" class="mod-card"></div>
-      </article>
+        <div id="winner-badge" class="winner-badge">—</div>
+      </div>
 
-      <article class="panel">
-        <div class="panel-header">
-          <div>
-            <p class="eyebrow">Raid decision</p>
-            <h2>Keep score</h2>
-          </div>
-          <div id="recommendation" class="recommendation">—</div>
-        </div>
-        <div class="score-wrap">
-          <div class="score-number" id="score-number">0</div>
-          <div>
-            <strong>Impact score</strong>
-            <p>Relative improvement against the Magnum’s live base stats.</p>
-          </div>
-        </div>
-        <div class="meter" aria-label="Impact score meter">
-          <div id="score-meter" class="meter-fill"></div>
-        </div>
-        <p id="score-explanation" class="muted"></p>
-      </article>
+      <div class="compare-selectors">
+        <label class="field">
+          <span>Mod A</span>
+          <select id="mod-a-select"></select>
+        </label>
+        <div class="versus">VS</div>
+        <label class="field">
+          <span>Mod B</span>
+          <select id="mod-b-select"></select>
+        </label>
+      </div>
+
+      <div class="comparison-cards">
+        <article id="mod-a-card" class="mod-card"></article>
+        <article id="mod-b-card" class="mod-card"></article>
+      </div>
     </section>
 
     <section class="panel">
       <div class="panel-header">
         <div>
-          <p class="eyebrow">Result</p>
+          <p class="eyebrow">Result matrix</p>
           <h2>Before and after</h2>
         </div>
       </div>
-      <div id="comparison-table" class="comparison"></div>
+      <div id="comparison-table" class="comparison-table"></div>
     </section>
 
     <section class="panel">
       <div class="panel-header">
         <div>
-          <p class="eyebrow">Manual check</p>
-          <h2>Evaluate a new drop</h2>
+          <p class="eyebrow">Verification workflow</p>
+          <h2>Generate a new verified mod record</h2>
+        </div>
+        <span class="badge">No data is uploaded</span>
+      </div>
+
+      <p class="muted">Enter the exact Magnum-specific tooltip values. This creates a JSON object you can paste into <code>data/verified-data.json</code>.</p>
+
+      <div class="form-grid">
+        <label class="field">
+          <span>Mod name</span>
+          <input id="new-name" type="text" placeholder="Example: Weighted Barrel">
+        </label>
+        <label class="field">
+          <span>Rarity</span>
+          <select id="new-rarity">
+            <option>Standard</option>
+            <option>Enhanced</option>
+            <option>Deluxe</option>
+            <option>Superior</option>
+            <option>Prestige</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Slot</span>
+          <select id="new-slot">
+            <option>Barrel</option>
+            <option>Grip</option>
+            <option>Magazine</option>
+            <option>Optic</option>
+            <option>Chip</option>
+            <option>Shield</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Verified date</span>
+          <input id="new-date" type="date" value="2026-07-18">
+        </label>
+      </div>
+
+      <div class="effect-builder">
+        <div class="effect-row">
+          <label class="field">
+            <span>Stat 1</span>
+            <select id="new-stat-1"></select>
+          </label>
+          <label class="field">
+            <span>Delta 1</span>
+            <input id="new-delta-1" type="number" step="0.01" value="0">
+          </label>
+        </div>
+        <div class="effect-row">
+          <label class="field">
+            <span>Stat 2</span>
+            <select id="new-stat-2"></select>
+          </label>
+          <label class="field">
+            <span>Delta 2</span>
+            <input id="new-delta-2" type="number" step="0.01" value="0">
+          </label>
+        </div>
+        <div class="effect-row">
+          <label class="field">
+            <span>Stat 3</span>
+            <select id="new-stat-3"></select>
+          </label>
+          <label class="field">
+            <span>Delta 3</span>
+            <input id="new-delta-3" type="number" step="0.01" value="0">
+          </label>
         </div>
       </div>
-      <p class="muted">Use this when a mod is not yet in the verified dataset. Add up to two stat changes from the in-game tooltip.</p>
-      <div class="manual-grid">
-        <label class="field">
-          <span>Stat 1</span>
-          <select id="manual-stat-1"></select>
-        </label>
-        <label class="field">
-          <span>Delta 1</span>
-          <input id="manual-delta-1" type="number" step="0.01" value="0">
-        </label>
-        <label class="field">
-          <span>Stat 2</span>
-          <select id="manual-stat-2"></select>
-        </label>
-        <label class="field">
-          <span>Delta 2</span>
-          <input id="manual-delta-2" type="number" step="0.01" value="0">
-        </label>
+
+      <label class="field full-width">
+        <span>Verification note</span>
+        <input id="new-note" type="text" placeholder="Season 2 Magnum MC values from a clean in-game screenshot.">
+      </label>
+
+      <div class="button-row">
+        <button id="generate-json" type="button">Generate JSON</button>
+        <button id="copy-json" type="button" class="secondary" disabled>Copy JSON</button>
       </div>
-      <button id="manual-evaluate" type="button">Evaluate unverified drop</button>
-      <div id="manual-result" class="manual-result muted">Enter the exact deltas shown in game. Negative values improve lower-is-better stats such as recoil.</div>
+
+      <div class="generated-layout">
+        <div>
+          <p class="eyebrow">Provisional score</p>
+          <div id="generated-score" class="generated-score">—</div>
+          <p id="generated-recommendation" class="muted">Generate a record to evaluate it.</p>
+        </div>
+        <pre id="json-output">JSON output will appear here.</pre>
+      </div>
+    </section>
+
+    <section class="panel compact">
+      <p><strong>Verification rule:</strong> only add values taken directly from the current in-game tooltip for the named weapon. Community values remain research leads, not recycle authority.</p>
     </section>
 
     <footer>
-      <p>Only live-verified values are included in the public dataset. The score is a transparent heuristic, not Bungie’s hidden headline-stat formula.</p>
+      <p>This score is a transparent, weapon-specific heuristic. It is not Bungie’s hidden Firepower, Accuracy, or Handling formula.</p>
     </footer>
   </main>
   <script src="app.js"></script>

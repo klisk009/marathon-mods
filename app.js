@@ -18,12 +18,29 @@ const statMeta = {
 };
 
 let data;
+let generatedRecord = null;
+
+function slugify(value) {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function formatNumber(value) {
+  if (Number.isInteger(value)) return String(value);
+  return value.toFixed(2).replace(/0+$/, "").replace(/\.$/, "");
+}
 
 function formatValue(stat, value) {
   const meta = statMeta[stat];
-  if (!meta) return String(value);
-  const decimals = Number.isInteger(value) ? 0 : 2;
-  return `${value.toFixed(decimals)}${meta.unit}`;
+  return `${formatNumber(value)}${meta?.unit || ""}`;
+}
+
+function displayDelta(effect) {
+  const sign = effect.delta > 0 ? "+" : "";
+  return `${sign}${formatNumber(effect.delta)}${effect.unit}`;
 }
 
 function calculateScore(baseStats, effects) {
@@ -36,145 +53,277 @@ function calculateScore(baseStats, effects) {
     if (!meta || !meta.weight || typeof base !== "number") continue;
 
     const isImprovement = meta.lowerIsBetter ? effect.delta < 0 : effect.delta > 0;
-    if (!isImprovement) continue;
+    if (!isImprovement) {
+      if (effect.delta !== 0) details.push(`${meta.label}: no positive score`);
+      continue;
+    }
 
-    const relative = Math.abs(effect.delta) / Math.abs(base);
-    const contribution = relative * meta.weight * 100;
+    const relativeChange = Math.abs(effect.delta) / Math.abs(base);
+    const contribution = relativeChange * meta.weight * 100;
     score += contribution;
-    details.push(`${meta.label}: +${contribution.toFixed(1)} score`);
+    details.push(`${meta.label}: +${contribution.toFixed(1)}`);
   }
 
-  return { score: Math.round(score * 10) / 10, details };
+  return {
+    score: Math.round(score * 10) / 10,
+    details
+  };
 }
 
 function recommendationFor(score, verified = true) {
-  if (!verified) return { label: "VERIFY", className: "verify" };
-  if (score >= 30) return { label: "HIGH KEEP", className: "high" };
-  if (score >= 15) return { label: "KEEP", className: "keep" };
-  if (score >= 7) return { label: "SITUATIONAL", className: "situational" };
-  return { label: "LOW PRIORITY", className: "low" };
+  if (!verified) return "VERIFY";
+  if (score >= 30) return "HIGH KEEP";
+  if (score >= 15) return "KEEP";
+  if (score >= 7) return "SITUATIONAL";
+  return "LOW PRIORITY";
 }
 
 function renderBaseStats() {
   const base = data.weapon.baseStats;
-  const keys = ["damage", "rpm", "range", "magazineSize", "recoil", "movingInaccuracy", "adsSpread", "reloadSpeed"];
-  document.getElementById("base-stats").innerHTML = keys.map(key => `
+  const keys = [
+    "damage", "rpm", "range", "magazineSize",
+    "recoil", "movingInaccuracy", "adsSpread", "reloadSpeed"
+  ];
+
+  document.getElementById("base-stats").innerHTML = keys.map(stat => `
     <div class="stat">
-      <span>${statMeta[key].label}</span>
-      <strong>${formatValue(key, base[key])}</strong>
+      <span>${statMeta[stat].label}</span>
+      <strong>${formatValue(stat, base[stat])}</strong>
     </div>
   `).join("");
 
-  const precisionDamage = base.damage * base.precisionMultiplier;
-  document.getElementById("precision-damage").textContent = precisionDamage.toFixed(1);
   document.getElementById("weapon-name").textContent = data.weapon.name;
   document.getElementById("verified-date").textContent = data.lastVerified;
+  document.getElementById("verified-count").textContent = data.mods.filter(mod => mod.verified).length;
+  document.getElementById("precision-damage").textContent =
+    (base.damage * base.precisionMultiplier).toFixed(1);
 }
 
-function populateSelects() {
-  const modSelect = document.getElementById("mod-select");
-  modSelect.innerHTML = data.mods.map((mod, index) =>
+function populateModSelectors() {
+  const options = data.mods.map((mod, index) =>
     `<option value="${index}">${mod.rarity} ${mod.name}</option>`
   ).join("");
 
-  const statOptions = Object.entries(statMeta)
+  const a = document.getElementById("mod-a-select");
+  const b = document.getElementById("mod-b-select");
+  a.innerHTML = options;
+  b.innerHTML = options;
+  a.value = "0";
+  b.value = data.mods.length > 1 ? "1" : "0";
+}
+
+function populateStatSelectors() {
+  const options = Object.entries(statMeta)
     .filter(([, meta]) => meta.weight > 0)
     .map(([key, meta]) => `<option value="${key}">${meta.label}</option>`)
     .join("");
 
-  document.getElementById("manual-stat-1").innerHTML = statOptions;
-  document.getElementById("manual-stat-2").innerHTML = statOptions;
-  document.getElementById("manual-stat-1").value = "recoil";
-  document.getElementById("manual-stat-2").value = "equipSpeed";
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById(`new-stat-${i}`).innerHTML = options;
+  }
+
+  document.getElementById("new-stat-1").value = "recoil";
+  document.getElementById("new-stat-2").value = "equipSpeed";
+  document.getElementById("new-stat-3").value = "movingInaccuracy";
 }
 
-function renderMod(index) {
-  const mod = data.mods[index];
-  const base = data.weapon.baseStats;
-  const result = calculateScore(base, mod.effects);
-  const rec = recommendationFor(result.score, mod.verified);
+function renderModCard(mod, targetId, isLeader) {
+  const result = calculateScore(data.weapon.baseStats, mod.effects);
+  const recommendation = recommendationFor(result.score, mod.verified);
+  const target = document.getElementById(targetId);
 
-  document.getElementById("selected-mod").innerHTML = `
-    <span class="badge">${mod.rarity} · ${mod.slot}</span>
-    <h3>${mod.name}</h3>
-    <p class="muted">${mod.note}</p>
+  target.className = `mod-card${isLeader ? " leading" : ""}`;
+  target.innerHTML = `
+    <div class="card-header">
+      <div>
+        <span class="badge">${mod.rarity} · ${mod.slot}</span>
+        <h3>${mod.name}</h3>
+      </div>
+      <span class="recommendation">${recommendation}</span>
+    </div>
     <ul>
-      ${mod.effects.map(effect => `
-        <li>${statMeta[effect.stat].label}: ${effect.delta > 0 ? "+" : ""}${effect.delta}${effect.unit}</li>
-      `).join("")}
+      ${mod.effects.map(effect =>
+        `<li>${statMeta[effect.stat].label}: <strong>${displayDelta(effect)}</strong></li>`
+      ).join("")}
     </ul>
+    <p class="source">${mod.source} · ${mod.verifiedOn}</p>
+    <p class="source">${mod.note || ""}</p>
+    <div class="score-box">
+      <strong>${result.score.toFixed(1)}</strong>
+      <span class="muted">impact score</span>
+    </div>
+    <div class="meter">
+      <div class="meter-fill" style="width:${Math.min(result.score, 50) / 50 * 100}%"></div>
+    </div>
   `;
 
-  document.getElementById("score-number").textContent = result.score.toFixed(1);
-  document.getElementById("recommendation").textContent = rec.label;
-  document.getElementById("score-meter").style.width = `${Math.min(result.score, 50) / 50 * 100}%`;
-  document.getElementById("score-explanation").textContent =
-    result.details.length ? result.details.join(" · ") : "No weighted improvement detected.";
-
-  renderComparison(mod.effects);
+  return result;
 }
 
-function renderComparison(effects) {
+function getModifiedValue(base, mod, stat) {
+  const effect = mod.effects.find(item => item.stat === stat);
+  return base[stat] + (effect?.delta || 0);
+}
+
+function comparisonClass(baseValue, modifiedValue, stat) {
+  if (modifiedValue === baseValue) return "neutral";
+  const lowerIsBetter = statMeta[stat].lowerIsBetter;
+  const improved = lowerIsBetter ? modifiedValue < baseValue : modifiedValue > baseValue;
+  return improved ? "positive" : "negative";
+}
+
+function renderComparisonTable(modA, modB) {
   const base = data.weapon.baseStats;
-  const affected = new Set(effects.map(effect => effect.stat));
-  const rows = [...affected].map(stat => {
-    const effect = effects.find(item => item.stat === stat);
-    const before = base[stat];
-    const after = before + effect.delta;
-    const meta = statMeta[stat];
-    const improvement = meta.lowerIsBetter ? after < before : after > before;
-    return `
-      <div class="comparison-row">
-        <strong>${meta.label}</strong>
-        <span>${formatValue(stat, before)}</span>
-        <span class="${improvement ? "positive" : "neutral"}">${formatValue(stat, after)}</span>
-        <span>${effect.delta > 0 ? "+" : ""}${effect.delta}${effect.unit}</span>
-      </div>
-    `;
-  }).join("");
+  const affectedStats = [...new Set([
+    ...modA.effects.map(effect => effect.stat),
+    ...modB.effects.map(effect => effect.stat)
+  ])];
 
   document.getElementById("comparison-table").innerHTML = `
     <div class="comparison-row header">
-      <span>Stat</span><span>Base</span><span>Modified</span><span>Delta</span>
+      <span>Stat</span>
+      <span>Base</span>
+      <span>${modA.name}</span>
+      <span>${modB.name}</span>
     </div>
-    ${rows}
+    ${affectedStats.map(stat => {
+      const a = getModifiedValue(base, modA, stat);
+      const b = getModifiedValue(base, modB, stat);
+      return `
+        <div class="comparison-row">
+          <strong>${statMeta[stat].label}</strong>
+          <span>${formatValue(stat, base[stat])}</span>
+          <span class="${comparisonClass(base[stat], a, stat)}">${formatValue(stat, a)}</span>
+          <span class="${comparisonClass(base[stat], b, stat)}">${formatValue(stat, b)}</span>
+        </div>
+      `;
+    }).join("")}
   `;
 }
 
-function evaluateManual() {
-  const effects = [
-    {
-      stat: document.getElementById("manual-stat-1").value,
-      delta: Number(document.getElementById("manual-delta-1").value)
-    },
-    {
-      stat: document.getElementById("manual-stat-2").value,
-      delta: Number(document.getElementById("manual-delta-2").value)
-    }
-  ].filter(effect => effect.delta !== 0);
+function renderComparison() {
+  const modA = data.mods[Number(document.getElementById("mod-a-select").value)];
+  const modB = data.mods[Number(document.getElementById("mod-b-select").value)];
+
+  const scoreA = calculateScore(data.weapon.baseStats, modA.effects);
+  const scoreB = calculateScore(data.weapon.baseStats, modB.effects);
+
+  renderModCard(modA, "mod-a-card", scoreA.score > scoreB.score);
+  renderModCard(modB, "mod-b-card", scoreB.score > scoreA.score);
+  renderComparisonTable(modA, modB);
+
+  const badge = document.getElementById("winner-badge");
+  if (scoreA.score === scoreB.score) {
+    badge.textContent = "TIE";
+  } else {
+    const winner = scoreA.score > scoreB.score ? modA : modB;
+    const difference = Math.abs(scoreA.score - scoreB.score).toFixed(1);
+    badge.textContent = `${winner.name} +${difference}`;
+  }
+}
+
+function unitForStat(stat) {
+  return statMeta[stat]?.unit || "";
+}
+
+function readGeneratedEffects() {
+  const effects = [];
+
+  for (let i = 1; i <= 3; i++) {
+    const stat = document.getElementById(`new-stat-${i}`).value;
+    const delta = Number(document.getElementById(`new-delta-${i}`).value);
+    if (!Number.isFinite(delta) || delta === 0) continue;
+    effects.push({
+      stat,
+      delta,
+      unit: unitForStat(stat)
+    });
+  }
+
+  return effects;
+}
+
+function generateRecord() {
+  const name = document.getElementById("new-name").value.trim();
+  const rarity = document.getElementById("new-rarity").value;
+  const slot = document.getElementById("new-slot").value;
+  const verifiedOn = document.getElementById("new-date").value;
+  const note = document.getElementById("new-note").value.trim();
+  const effects = readGeneratedEffects();
+
+  if (!name) {
+    alert("Enter the mod name.");
+    return;
+  }
+  if (!verifiedOn) {
+    alert("Enter the verification date.");
+    return;
+  }
+  if (effects.length === 0) {
+    alert("Enter at least one non-zero stat delta.");
+    return;
+  }
+
+  generatedRecord = {
+    slug: `${slugify(name)}-${rarity.toLowerCase()}`,
+    name,
+    rarity,
+    slot,
+    verified: true,
+    verifiedOn,
+    source: "Live in-game screenshot",
+    effects,
+    note: note || "Current Magnum MC values from a clean in-game tooltip."
+  };
 
   const result = calculateScore(data.weapon.baseStats, effects);
-  const rec = recommendationFor(result.score, false);
-  document.getElementById("manual-result").innerHTML = `
-    <strong>${rec.label}</strong> · provisional score ${result.score.toFixed(1)}.
-    ${result.details.length ? result.details.join(" · ") : "No weighted improvement detected."}
-    Confirm the exact values in game before recycling another copy.
-  `;
+  document.getElementById("json-output").textContent =
+    JSON.stringify(generatedRecord, null, 2);
+  document.getElementById("generated-score").textContent =
+    result.score.toFixed(1);
+  document.getElementById("generated-recommendation").textContent =
+    `${recommendationFor(result.score, true)} · ${result.details.join(" · ") || "No positive weighted effect detected."}`;
+  document.getElementById("copy-json").disabled = false;
+}
+
+async function copyGeneratedJson() {
+  if (!generatedRecord) return;
+
+  try {
+    await navigator.clipboard.writeText(JSON.stringify(generatedRecord, null, 2));
+    const button = document.getElementById("copy-json");
+    const original = button.textContent;
+    button.textContent = "Copied";
+    setTimeout(() => button.textContent = original, 1400);
+  } catch {
+    alert("Clipboard access was blocked. Select and copy the JSON manually.");
+  }
 }
 
 async function init() {
   const response = await fetch("data/verified-data.json");
-  if (!response.ok) throw new Error("Could not load verified data.");
+  if (!response.ok) throw new Error("Could not load data/verified-data.json.");
   data = await response.json();
 
   renderBaseStats();
-  populateSelects();
-  renderMod(0);
+  populateModSelectors();
+  populateStatSelectors();
+  renderComparison();
 
-  document.getElementById("mod-select").addEventListener("change", event => renderMod(Number(event.target.value)));
-  document.getElementById("manual-evaluate").addEventListener("click", evaluateManual);
+  document.getElementById("mod-a-select").addEventListener("change", renderComparison);
+  document.getElementById("mod-b-select").addEventListener("change", renderComparison);
+  document.getElementById("generate-json").addEventListener("click", generateRecord);
+  document.getElementById("copy-json").addEventListener("click", copyGeneratedJson);
 }
 
 init().catch(error => {
-  document.body.innerHTML = `<main class="shell"><div class="panel"><h1>Load error</h1><p>${error.message}</p><p>Open this project through GitHub Pages or a local web server rather than double-clicking index.html.</p></div></main>`;
+  document.body.innerHTML = `
+    <main class="shell">
+      <section class="panel">
+        <h1>Load error</h1>
+        <p>${error.message}</p>
+        <p>Use GitHub Pages or a local web server rather than opening index.html directly.</p>
+      </section>
+    </main>
+  `;
 });

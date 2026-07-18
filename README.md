@@ -1,38 +1,90 @@
-# marathon-mods
-Marathon weapon and mod evaluation project
-Marathon Mods Starter Dataset
-This package was generated from the uploaded `marathondb-mods.html`.
-What was found
-222 embedded mod records in `window.__MODS_DATA`
-139 visible records (`is_active = 1`, `is_hidden = 0`)
-83 hidden or legacy records
-11 records listing `magnum-mc`
-2 Season 2 live screenshot overrides applied
-Important data-quality rule
-Community values are not treated as authoritative. The files retain verification and
-partial-data flags. Current in-game screenshots override community values.
-The uploaded HTML's Deluxe Ironhold value for the Magnum was stale. The live Season 2
-screenshot replaces it with:
-Equip Speed: `-0.07s`
-Recoil: `-44.1%`
-The Enhanced Weighted Barrel values matched the live screenshot:
-Moving Inaccuracy: `-16.4%`
-Aim Assist: `+0.05°`
-Files
-`extract_marathondb.py` — reusable HTML extractor
-`data/mods_all.json` — all embedded records, including hidden/legacy entries
-`data/mods_active.json` — the 139 visible records
-`data/mods.csv` — one row per mod
-`data/weapon_effects.csv` — one row per mod/weapon/stat effect
-`data/magnum_mods.csv` — initial Magnum-specific keep/verify ranking
-`data/live_overrides.json` — current in-game corrections and Magnum base stats
-`data/dataset_summary.json` — extraction counts
-Run the extractor again
-```powershell
-python .\extract_marathondb.py "C:\path\to\marathondb-mods.html" --output .\data
+# Marathon Mod Evaluator
+
+A public-safe, static web application for evaluating live-verified Marathon weapon mods.
+
+## Current version
+
+**0.2.0**
+
+Current scope:
+
+- Weapon: Magnum MC
+- Input: Mouse and keyboard
+- Season: 2
+- Side-by-side mod comparison
+- Before-and-after stat matrix
+- Transparent impact score
+- JSON generator for adding the next live-verified mod
+
+## Included verified mods
+
+- Enhanced Weighted Barrel
+- Deluxe Ironhold Barrel
+
+Only values confirmed from current in-game screenshots are included in the public dataset.
+
+## Repository structure
+
+```text
+marathon-mods/
+├── data/
+│   ├── verified-data.json
+│   └── new-mod-template.json
+├── docs/
+│   └── ADDING_MODS.md
+├── index.html
+├── styles.css
+├── app.js
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
-Interpretation of `magnum_mods.csv`
-The impact score is an initial relative-stat model, not a claim about Bungie's hidden
-headline score formulas. It emphasizes recoil, moving accuracy, ADS spread, and range.
-Records marked `VERIFY` should not drive a recycle decision until checked in game.
-Hidden records are marked `EXCLUDE`.
+
+## Updating the website
+
+Replace the existing copies of:
+
+```text
+index.html
+styles.css
+app.js
+README.md
+```
+
+Upload these new files:
+
+```text
+data/new-mod-template.json
+docs/ADDING_MODS.md
+```
+
+Replace:
+
+```text
+data/verified-data.json
+```
+
+Then commit the changes. GitHub Pages will redeploy automatically.
+
+## Scoring model
+
+The score measures relative improvement against the Magnum MC's verified base stats.
+
+Current emphasis:
+
+1. Recoil
+2. Moving inaccuracy
+3. ADS spread
+4. Range
+5. ADS and equip speed
+6. Reload and magazine size
+7. Aim assist
+8. Zoom and weight
+
+The score is a heuristic for inventory decisions. It is not Bungie's unpublished Firepower,
+Accuracy, or Handling formula.
+
+## Data policy
+
+Bulk third-party databases are not included. Community data may be used privately as a lead,
+but a public record is added only after the current Magnum-specific values are confirmed in game.
