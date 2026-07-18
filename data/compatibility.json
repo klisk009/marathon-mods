@@ -38,5 +38,130 @@
       }
     ],
     "note": "Season 2 Magnum MC tooltip values; supersedes older community figures."
+  },
+  {
+    "weaponSlug": "misriah-2442",
+    "modSlug": "fastload-mag-ii-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.15,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 1,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Only compatible weapon shown; exact Misriah 2442 pairing."
+  },
+  {
+    "weaponSlug": "misriah-2442",
+    "modSlug": "compartmental-mag-ii-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.08,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 1,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 2,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Only compatible weapon shown; exact Misriah 2442 pairing."
+  },
+  {
+    "weaponSlug": "ares-rg",
+    "modSlug": "turbo-drive-superior",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -1.51,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 2,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Only compatible weapon shown; exact Ares RG pairing."
+  },
+  {
+    "weaponSlug": "ares-rg",
+    "modSlug": "mega-drive-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "magazineSize",
+        "delta": 4,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Only compatible weapon shown; exact Ares RG pairing."
+  },
+  {
+    "weaponSlug": "stryder-m1t",
+    "modSlug": "hi-cap-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "magazineSize",
+        "delta": 10,
+        "unit": "rounds"
+      }
+    ],
+    "note": "User-confirmed live value."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "hi-cap-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "magazineSize",
+        "delta": 20,
+        "unit": "rounds"
+      }
+    ],
+    "note": "User-confirmed live value."
+  },
+  {
+    "weaponSlug": "br33-volley-rifle",
+    "modSlug": "hi-cap-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "magazineSize",
+        "delta": 30,
+        "unit": "rounds"
+      }
+    ],
+    "note": "User-confirmed live value."
   }
 ]

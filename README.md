@@ -5,7 +5,16 @@ weapon-specific Marathon mod records.
 
 ## Version
 
-**0.3.3**
+**0.4.0**
+
+## What changed in v0.4.0
+
+- Imported 34 inventory screenshots representing 33 unique mod variants
+- Added 35 total mod records, including the two earlier verified Magnum mods
+- Added weapon compatibility lists from the live tooltips
+- Added seven exact weapon/mod pairings where the weapon was confirmed
+- Added unresolved-pairing warnings so variable mod values are not misapplied
+- Added exact Hi-Cap Mag values for Stryder M1T (+10), Twin Tap HBR (+20), and BR33 Volley Rifle (+30)
 
 ## What changed in v0.3.3
 

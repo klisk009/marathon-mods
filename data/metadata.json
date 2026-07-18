@@ -1,14 +1,20 @@
 {
   "schemaVersion": 1,
-  "appVersion": "0.3.3",
+  "appVersion": "0.4.0",
   "season": 2,
   "generatedOn": "2026-07-18",
   "publicDataPolicy": "Only live-verified or user-created records are published.",
   "dataCounts": {
     "weapons": 23,
-    "mods": 2,
-    "compatibilityRecords": 2,
-    "observations": 25,
+    "mods": 35,
+    "compatibilityRecords": 9,
+    "observations": 58,
     "scoringProfiles": 1
+  },
+  "inventoryCaptureSummary": {
+    "screenshotsReceived": 34,
+    "uniqueModVariants": 33,
+    "duplicateScreenshots": 1,
+    "exactWeaponPairingsAdded": 7
   }
 }

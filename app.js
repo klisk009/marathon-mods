@@ -81,7 +81,9 @@ function statusLabel(status) {
   return {
     live_verified: "Live verified",
     community_verified: "Community verified",
-    community_unverified: "Unverified"
+    community_unverified: "Unverified",
+    live_observed: "Live observed",
+    weapon_unresolved: "Weapon unresolved"
   }[status] || status;
 }
 
@@ -95,6 +97,33 @@ function getMod(slug) {
 
 function getCompatibleRecords(weaponSlug = state.weaponSlug) {
   return state.data.compatibility.filter(record => record.weaponSlug === weaponSlug);
+}
+
+function getCatalogEntries(weaponSlug = state.weaponSlug) {
+  const exactRecords = getCompatibleRecords(weaponSlug);
+  const exactByMod = new Map(exactRecords.map(record => [record.modSlug, record]));
+  const entries = exactRecords.map(record => ({
+    ...record,
+    exactWeaponPairing: true
+  }));
+
+  for (const mod of state.data.mods) {
+    const compatible = (mod.compatibleWeaponSlugs || []).includes(weaponSlug);
+    if (!compatible || exactByMod.has(mod.slug)) continue;
+
+    entries.push({
+      weaponSlug,
+      modSlug: mod.slug,
+      verificationStatus: "weapon_unresolved",
+      verifiedOn: mod.verifiedOn,
+      sourceType: mod.sourceType,
+      effects: mod.observedEffects || [],
+      exactWeaponPairing: false,
+      note: "Live tooltip captured, but the weapon producing these exact values was not visible."
+    });
+  }
+
+  return entries;
 }
 
 function getProfile() {
@@ -262,7 +291,7 @@ function searchableRecord(record) {
 }
 
 function filteredRecords() {
-  return getCompatibleRecords().filter(record => {
+  return getCatalogEntries().filter(record => {
     const mod = getMod(record.modSlug);
     if (!mod) return false;
 
@@ -288,8 +317,11 @@ function renderCatalog() {
 
   catalog.innerHTML = records.map(record => {
     const mod = getMod(record.modSlug);
-    const result = scoreRecord(record, profile);
-    const decision = recommendation(result.score, record.verificationStatus);
+    const exact = record.exactWeaponPairing !== false;
+    const result = exact ? scoreRecord(record, profile) : { score: 0, details: [] };
+    const decision = exact
+      ? recommendation(result.score, record.verificationStatus)
+      : "VERIFY PAIRING";
 
     return `
       <article class="catalog-card">
@@ -310,9 +342,13 @@ function renderCatalog() {
             </li>
           `).join("")}
         </ul>
+        ${exact
+          ? ""
+          : `<p class="muted"><strong>Observed values only:</strong> this mod varies by weapon, so these deltas are not applied to ${escapeHtml(getWeapon()?.name || "the selected weapon")} until the pairing is confirmed.</p>`
+        }
         <div class="card-footer">
           <div>
-            <span class="score-inline">${result.score.toFixed(1)}</span>
+            <span class="score-inline">${exact ? result.score.toFixed(1) : "—"}</span>
             <span class="muted"> ${escapeHtml(decision)}</span>
           </div>
           <span class="badge">${escapeHtml(record.verifiedOn || "Unknown date")}</span>

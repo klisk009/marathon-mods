@@ -114,3 +114,27 @@ Weapons captured from the in-game Schemas area use:
 `schemaCost` is kept separate from `purchaseCost` because the displayed schema cost may
 not represent the ordinary shop price. Missing values, such as a magazine stat that is not
 shown on a schema screen, remain absent rather than being inferred.
+
+
+## Inventory mod observations
+
+A live mod tooltip may show a value that varies by weapon while the selected weapon is not
+visible in the screenshot. These records use:
+
+```json
+{
+  "verificationStatus": "live_observed",
+  "observedEffectContext": "weapon_unresolved"
+}
+```
+
+The values may be displayed as evidence, but they are not scored against a weapon until an
+exact `compatibility.json` pairing is confirmed.
+
+Exact pairings continue to use:
+
+```json
+{
+  "verificationStatus": "live_verified"
+}
+```
