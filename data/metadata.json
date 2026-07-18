@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "appVersion": "0.3.0",
+  "season": 2,
+  "generatedOn": "2026-07-18",
+  "publicDataPolicy": "Only live-verified or user-created records are published.",
+  "dataCounts": {
+    "weapons": 1,
+    "mods": 2,
+    "compatibilityRecords": 2,
+    "observations": 3,
+    "scoringProfiles": 1
+  }
+}

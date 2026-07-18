@@ -1,117 +1,189 @@
-from __future__ import annotations
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marathon Mod Database</title>
+  <meta name="description" content="Search and compare live-verified Marathon weapon mods.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Version 0.3 · Database Architecture</p>
+        <h1>Marathon Mod Database</h1>
+        <p class="lede">A weapon-aware catalog for live-verified mods, compatibility records, stat effects, and keep-or-recycle analysis.</p>
+      </div>
+      <div class="status-card">
+        <span class="status-dot"></span>
+        <div>
+          <strong id="app-version">Loading…</strong>
+          <span id="dataset-status">Loading data files</span>
+        </div>
+      </div>
+    </header>
 
-import json
-from pathlib import Path
-from typing import Any
+    <section class="metric-grid">
+      <article class="metric-card">
+        <span>Weapons</span>
+        <strong id="weapon-count">—</strong>
+      </article>
+      <article class="metric-card">
+        <span>Mods</span>
+        <strong id="mod-count">—</strong>
+      </article>
+      <article class="metric-card">
+        <span>Compatibility records</span>
+        <strong id="compatibility-count">—</strong>
+      </article>
+      <article class="metric-card">
+        <span>Live verified</span>
+        <strong id="verified-count">—</strong>
+      </article>
+    </section>
 
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Weapon workspace</p>
+          <h2>Choose a weapon</h2>
+        </div>
+        <label class="field weapon-field">
+          <span>Weapon</span>
+          <select id="weapon-select"></select>
+        </label>
+      </div>
+      <div id="weapon-profile" class="weapon-profile"></div>
+      <div id="weapon-stats" class="stat-grid"></div>
+    </section>
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Catalog</p>
+          <h2>Compatible mods</h2>
+        </div>
+        <span id="result-count" class="badge">—</span>
+      </div>
 
+      <div class="filter-grid">
+        <label class="field search-field">
+          <span>Search</span>
+          <input id="search-input" type="search" placeholder="Search name, slot, rarity, effect…">
+        </label>
+        <label class="field">
+          <span>Slot</span>
+          <select id="slot-filter">
+            <option value="">All slots</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Rarity</span>
+          <select id="rarity-filter">
+            <option value="">All rarities</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Status</span>
+          <select id="status-filter">
+            <option value="">All statuses</option>
+            <option value="live_verified">Live verified</option>
+            <option value="community_verified">Community verified</option>
+            <option value="community_unverified">Unverified</option>
+          </select>
+        </label>
+      </div>
 
-def load_json(name: str) -> Any:
-    path = DATA / name
-    if not path.exists():
-        raise FileNotFoundError(f"Missing {path.relative_to(ROOT)}")
-    with path.open("r", encoding="utf-8") as file:
-        return json.load(file)
+      <div id="catalog" class="catalog"></div>
+      <div id="empty-state" class="empty-state" hidden>No records match the current filters.</div>
+    </section>
 
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Comparison</p>
+          <h2>Compare compatible mods</h2>
+        </div>
+        <div id="comparison-winner" class="winner-badge">—</div>
+      </div>
 
-def require_unique(records: list[dict], field: str, label: str) -> set[str]:
-    seen: set[str] = set()
-    duplicates: set[str] = set()
+      <div class="compare-selectors">
+        <label class="field">
+          <span>Mod A</span>
+          <select id="compare-a"></select>
+        </label>
+        <div class="versus">VS</div>
+        <label class="field">
+          <span>Mod B</span>
+          <select id="compare-b"></select>
+        </label>
+        <label class="field">
+          <span>Scoring profile</span>
+          <select id="profile-select"></select>
+        </label>
+      </div>
 
-    for record in records:
-        value = record.get(field)
-        if not isinstance(value, str) or not value:
-            raise ValueError(f"{label} record is missing a valid {field}: {record}")
-        if value in seen:
-            duplicates.add(value)
-        seen.add(value)
+      <div class="comparison-cards">
+        <article id="compare-card-a" class="comparison-card"></article>
+        <article id="compare-card-b" class="comparison-card"></article>
+      </div>
 
-    if duplicates:
-        raise ValueError(f"Duplicate {label} {field} values: {sorted(duplicates)}")
+      <div id="comparison-table" class="comparison-table"></div>
+    </section>
 
-    return seen
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Data builder</p>
+          <h2>Create a verified compatibility record</h2>
+        </div>
+        <span class="badge">Runs locally</span>
+      </div>
 
+      <p class="muted">Use this after checking a current in-game tooltip. It creates a compatibility record for the selected weapon and mod.</p>
 
-def main() -> None:
-    metadata = load_json("metadata.json")
-    weapons = load_json("weapons.json")
-    mods = load_json("mods.json")
-    compatibility = load_json("compatibility.json")
-    observations = load_json("observations.json")
-    profiles = load_json("scoring-profiles.json")
+      <div class="builder-grid">
+        <label class="field">
+          <span>Weapon</span>
+          <select id="builder-weapon"></select>
+        </label>
+        <label class="field">
+          <span>Mod</span>
+          <select id="builder-mod"></select>
+        </label>
+        <label class="field">
+          <span>Verified date</span>
+          <input id="builder-date" type="date" value="2026-07-18">
+        </label>
+      </div>
 
-    if metadata.get("appVersion") != "0.3.0":
-        raise ValueError("metadata.json appVersion must be 0.3.0")
+      <div id="effect-rows" class="effect-rows"></div>
 
-    weapon_slugs = require_unique(weapons, "slug", "weapon")
-    mod_slugs = require_unique(mods, "slug", "mod")
-    require_unique(observations, "id", "observation")
-    require_unique(profiles, "id", "scoring profile")
+      <div class="button-row">
+        <button id="add-effect" type="button" class="secondary">Add effect</button>
+        <button id="generate-record" type="button">Generate record</button>
+        <button id="copy-record" type="button" class="secondary" disabled>Copy JSON</button>
+      </div>
 
-    compatibility_keys: set[tuple[str, str]] = set()
-    allowed_statuses = {
-        "live_verified",
-        "community_verified",
-        "community_unverified",
-        "stale",
-        "partial",
-    }
+      <div class="generated-layout">
+        <div>
+          <p class="eyebrow">Provisional score</p>
+          <div id="builder-score" class="builder-score">—</div>
+          <p id="builder-recommendation" class="muted">Generate a record to evaluate it.</p>
+        </div>
+        <pre id="record-output">JSON output will appear here.</pre>
+      </div>
+    </section>
 
-    for record in compatibility:
-        weapon_slug = record.get("weaponSlug")
-        mod_slug = record.get("modSlug")
-        key = (weapon_slug, mod_slug)
+    <section class="panel compact">
+      <p><strong>Public-data rule:</strong> the repository includes only live-verified or user-created records until permission for a broader source dataset is received.</p>
+    </section>
 
-        if weapon_slug not in weapon_slugs:
-            raise ValueError(f"Unknown weaponSlug in compatibility: {weapon_slug}")
-        if mod_slug not in mod_slugs:
-            raise ValueError(f"Unknown modSlug in compatibility: {mod_slug}")
-        if key in compatibility_keys:
-            raise ValueError(f"Duplicate compatibility record: {key}")
-        compatibility_keys.add(key)
-
-        status = record.get("verificationStatus")
-        if status not in allowed_statuses:
-            raise ValueError(f"Invalid verificationStatus {status!r} in {key}")
-
-        effects = record.get("effects")
-        if not isinstance(effects, list) or not effects:
-            raise ValueError(f"Compatibility record {key} requires at least one effect")
-
-        for effect in effects:
-            if not isinstance(effect.get("stat"), str) or not effect["stat"]:
-                raise ValueError(f"Invalid stat in {key}: {effect}")
-            if not isinstance(effect.get("delta"), (int, float)):
-                raise ValueError(f"Invalid delta in {key}: {effect}")
-            if not isinstance(effect.get("unit"), str) or not effect["unit"]:
-                raise ValueError(f"Invalid unit in {key}: {effect}")
-
-    counted = metadata.get("dataCounts", {})
-    expected_counts = {
-        "weapons": len(weapons),
-        "mods": len(mods),
-        "compatibilityRecords": len(compatibility),
-        "observations": len(observations),
-        "scoringProfiles": len(profiles),
-    }
-
-    if counted != expected_counts:
-        raise ValueError(
-            "metadata.json dataCounts do not match the files.\n"
-            f"Expected: {expected_counts}\n"
-            f"Found:    {counted}"
-        )
-
-    print("Validation passed.")
-    print(f"Weapons: {len(weapons)}")
-    print(f"Mods: {len(mods)}")
-    print(f"Compatibility records: {len(compatibility)}")
-    print(f"Observations: {len(observations)}")
-    print(f"Scoring profiles: {len(profiles)}")
-
-
-if __name__ == "__main__":
-    main()
+    <footer>
+      <p>Scores are transparent heuristics, not Bungie’s unpublished Firepower, Accuracy, or Handling formulas.</p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
