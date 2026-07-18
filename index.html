@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marathon Mod Evaluator</title>
+  <meta name="description" content="Evaluate live-verified Marathon mods against the Magnum MC.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Season 2 · Mouse & Keyboard</p>
+        <h1>Marathon Mod Evaluator</h1>
+        <p class="lede">Compare live-verified Magnum MC mods and estimate whether a raid drop is worth keeping.</p>
+      </div>
+      <div class="status-card">
+        <span class="status-dot"></span>
+        <div>
+          <strong id="verified-date">Loading…</strong>
+          <span>Last live verification</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Weapon</p>
+          <h2 id="weapon-name">Magnum MC</h2>
+        </div>
+        <div class="stat-pill">
+          Precision damage
+          <strong id="precision-damage">—</strong>
+        </div>
+      </div>
+      <div id="base-stats" class="stat-grid"></div>
+    </section>
+
+    <section class="two-column">
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Verified inventory</p>
+            <h2>Select a mod</h2>
+          </div>
+        </div>
+        <label class="field">
+          <span>Mod</span>
+          <select id="mod-select"></select>
+        </label>
+        <div id="selected-mod" class="mod-card"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Raid decision</p>
+            <h2>Keep score</h2>
+          </div>
+          <div id="recommendation" class="recommendation">—</div>
+        </div>
+        <div class="score-wrap">
+          <div class="score-number" id="score-number">0</div>
+          <div>
+            <strong>Impact score</strong>
+            <p>Relative improvement against the Magnum’s live base stats.</p>
+          </div>
+        </div>
+        <div class="meter" aria-label="Impact score meter">
+          <div id="score-meter" class="meter-fill"></div>
+        </div>
+        <p id="score-explanation" class="muted"></p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Result</p>
+          <h2>Before and after</h2>
+        </div>
+      </div>
+      <div id="comparison-table" class="comparison"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Manual check</p>
+          <h2>Evaluate a new drop</h2>
+        </div>
+      </div>
+      <p class="muted">Use this when a mod is not yet in the verified dataset. Add up to two stat changes from the in-game tooltip.</p>
+      <div class="manual-grid">
+        <label class="field">
+          <span>Stat 1</span>
+          <select id="manual-stat-1"></select>
+        </label>
+        <label class="field">
+          <span>Delta 1</span>
+          <input id="manual-delta-1" type="number" step="0.01" value="0">
+        </label>
+        <label class="field">
+          <span>Stat 2</span>
+          <select id="manual-stat-2"></select>
+        </label>
+        <label class="field">
+          <span>Delta 2</span>
+          <input id="manual-delta-2" type="number" step="0.01" value="0">
+        </label>
+      </div>
+      <button id="manual-evaluate" type="button">Evaluate unverified drop</button>
+      <div id="manual-result" class="manual-result muted">Enter the exact deltas shown in game. Negative values improve lower-is-better stats such as recoil.</div>
+    </section>
+
+    <footer>
+      <p>Only live-verified values are included in the public dataset. The score is a transparent heuristic, not Bungie’s hidden headline-stat formula.</p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
