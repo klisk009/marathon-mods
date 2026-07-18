@@ -20,7 +20,8 @@
       "reloadSpeed": 0.35,
       "range": 0.75,
       "magazineSize": 0.35,
-      "adsZoom": 0.1
+      "adsZoom": 0.1,
+      "spreadAngle": 0.75
     }
   }
 ]

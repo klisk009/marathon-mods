@@ -25,6 +25,71 @@
       "range": 21.0,
       "magazineSize": 12,
       "adsZoom": 1.4
-    }
+    },
+    "displayStats": [
+      "damage",
+      "precisionMultiplier",
+      "rpm",
+      "range",
+      "magazineSize",
+      "recoil",
+      "movingInaccuracy",
+      "adsSpread",
+      "reloadSpeed",
+      "equipSpeed",
+      "adsSpeed",
+      "aimAssist",
+      "adsZoom"
+    ]
+  },
+  {
+    "slug": "misriah-2442",
+    "name": "Misriah 2442",
+    "category": "Shotgun",
+    "ammoType": "MTPS Cartridge",
+    "season": 2,
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "baseStats": {
+      "firepower": 168.0,
+      "damage": 11.7,
+      "precisionMultiplier": 1.2,
+      "rpm": 72,
+      "handling": 54,
+      "equipSpeed": 0.9,
+      "adsSpeed": 0.42,
+      "weight": 36.0,
+      "recoil": 93.0,
+      "aimAssist": 5.1,
+      "reloadSpeed": 0.84,
+      "crouchSpreadBonus": 0.0,
+      "range": 10.0,
+      "spreadAngle": 4.8,
+      "magazineSize": 4,
+      "adsZoom": 1.1
+    },
+    "displayStats": [
+      "firepower",
+      "damage",
+      "precisionMultiplier",
+      "rpm",
+      "handling",
+      "equipSpeed",
+      "adsSpeed",
+      "weight",
+      "recoil",
+      "aimAssist",
+      "reloadSpeed",
+      "crouchSpreadBonus",
+      "range",
+      "spreadAngle",
+      "magazineSize",
+      "adsZoom"
+    ],
+    "notes": "Pump-action shotgun. Reloads one MTPS cartridge at a time.",
+    "rarity": "Standard",
+    "purchaseCost": 6000,
+    "description": "Pump-action shotgun kept for close encounters. Reloads one MTPS cartridge at a time."
   }
 ]

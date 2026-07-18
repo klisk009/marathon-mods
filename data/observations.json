@@ -31,5 +31,16 @@
     "sourceType": "in_game_screenshot",
     "status": "live_verified",
     "notes": "Clean current tooltip values."
+  },
+  {
+    "id": "obs-misriah-2442-base-2026-07-18",
+    "recordType": "weapon_base_stats",
+    "weaponSlug": "misriah-2442",
+    "modSlug": null,
+    "season": 2,
+    "observedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "status": "live_verified",
+    "notes": "Current clean Misriah 2442 base-stat screenshot."
   }
 ]

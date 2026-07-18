@@ -5,7 +5,14 @@ weapon-specific Marathon mod records.
 
 ## Version
 
-**0.3.0**
+**0.3.1**
+
+## What changed in v0.3.1
+
+- Added the live-verified Misriah 2442 weapon profile
+- Added support for weapon-specific display stat lists
+- Added Firepower, Handling, and Spread Angle fields
+- Added shotgun spread weighting for future mod comparisons
 
 ## What changed in v0.3
 
@@ -22,6 +29,7 @@ weapon-specific Marathon mod records.
 ## Public data currently included
 
 - Magnum MC
+- Misriah 2442
 - Enhanced Weighted Barrel
 - Deluxe Ironhold Barrel
 - Two live-verified Magnum compatibility records

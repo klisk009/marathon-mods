@@ -8,6 +8,9 @@ const DATA_FILES = [
 ];
 
 const statMeta = {
+  firepower: { label: "Firepower", unit: "", lowerIsBetter: false },
+  handling: { label: "Handling", unit: "", lowerIsBetter: false },
+  spreadAngle: { label: "Spread angle", unit: "°", lowerIsBetter: true },
   damage: { label: "Damage", unit: "", lowerIsBetter: false },
   precisionMultiplier: { label: "Precision multiplier", unit: "×", lowerIsBetter: false },
   rpm: { label: "RPM", unit: "", lowerIsBetter: false },
@@ -185,9 +188,12 @@ function renderWeapon() {
     <div>
       <p class="eyebrow">${escapeHtml(weapon.category)}</p>
       <h3>${escapeHtml(weapon.name)}</h3>
+      <p>${escapeHtml(weapon.description || "")}</p>
       <p>${escapeHtml(weapon.ammoType)} · Season ${escapeHtml(weapon.season)}</p>
     </div>
     <div class="meta-line">
+      ${weapon.rarity ? `<span class="badge">${escapeHtml(weapon.rarity)}</span>` : ""}
+      ${typeof weapon.purchaseCost === "number" ? `<span class="badge">${weapon.purchaseCost.toLocaleString()} credits</span>` : ""}
       <span class="status-badge ${escapeHtml(weapon.verificationStatus)}">
         ${escapeHtml(statusLabel(weapon.verificationStatus))}
       </span>
@@ -198,17 +204,16 @@ function renderWeapon() {
     </div>
   `;
 
-  const statOrder = [
-    "damage", "rpm", "range", "magazineSize",
-    "recoil", "movingInaccuracy", "adsSpread", "reloadSpeed"
-  ];
+  const statOrder = weapon.displayStats || Object.keys(weapon.baseStats);
 
-  document.getElementById("weapon-stats").innerHTML = statOrder.map(stat => `
-    <div class="stat">
-      <span>${escapeHtml(statMeta[stat].label)}</span>
-      <strong>${escapeHtml(formatBaseValue(stat, weapon.baseStats[stat]))}</strong>
-    </div>
-  `).join("");
+  document.getElementById("weapon-stats").innerHTML = statOrder
+    .filter(stat => typeof weapon.baseStats[stat] === "number" && statMeta[stat])
+    .map(stat => `
+      <div class="stat">
+        <span>${escapeHtml(statMeta[stat].label)}</span>
+        <strong>${escapeHtml(formatBaseValue(stat, weapon.baseStats[stat]))}</strong>
+      </div>
+    `).join("");
 }
 
 function populateFilters() {
