@@ -21,7 +21,12 @@
       "range": 0.75,
       "magazineSize": 0.35,
       "adsZoom": 0.1,
-      "spreadAngle": 0.75
+      "spreadAngle": 0.75,
+      "chargeTime": 0.45,
+      "voltDrain": 0.35,
+      "accuracy": 0.0,
+      "handling": 0.0,
+      "firepower": 0.0
     }
   }
 ]

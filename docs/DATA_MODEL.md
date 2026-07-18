@@ -98,3 +98,19 @@ Future profiles could include:
 - `partial`
 
 Current public records use `live_verified`.
+
+
+## Schema-derived weapon records
+
+Weapons captured from the in-game Schemas area use:
+
+```json
+{
+  "sourceContext": "schema",
+  "schemaCost": 2800
+}
+```
+
+`schemaCost` is kept separate from `purchaseCost` because the displayed schema cost may
+not represent the ordinary shop price. Missing values, such as a magazine stat that is not
+shown on a schema screen, remain absent rather than being inferred.

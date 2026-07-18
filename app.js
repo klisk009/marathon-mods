@@ -8,6 +8,9 @@ const DATA_FILES = [
 ];
 
 const statMeta = {
+  accuracy: { label: "Accuracy", unit: "", lowerIsBetter: false },
+  chargeTime: { label: "Charge time", unit: "s", lowerIsBetter: true },
+  voltDrain: { label: "Volt drain", unit: "%", lowerIsBetter: true },
   firepower: { label: "Firepower", unit: "", lowerIsBetter: false },
   handling: { label: "Handling", unit: "", lowerIsBetter: false },
   spreadAngle: { label: "Spread angle", unit: "°", lowerIsBetter: true },
@@ -120,6 +123,11 @@ function scoreRecord(record, profile = getProfile()) {
       continue;
     }
 
+    if (base === 0) {
+      details.push(`${meta.label}: zero-base stat requires manual review`);
+      continue;
+    }
+
     const contribution = (Math.abs(effect.delta) / Math.abs(base)) * weight * 100;
     score += contribution;
     details.push(`${meta.label}: +${contribution.toFixed(1)}`);
@@ -189,11 +197,19 @@ function renderWeapon() {
       <p class="eyebrow">${escapeHtml(weapon.category)}</p>
       <h3>${escapeHtml(weapon.name)}</h3>
       <p>${escapeHtml(weapon.description || "")}</p>
-      <p>${escapeHtml(weapon.ammoType)} · Season ${escapeHtml(weapon.season)}</p>
+      <p>${weapon.ammoType ? `${escapeHtml(weapon.ammoType)} · ` : ""}Season ${escapeHtml(weapon.season)}</p>
     </div>
     <div class="meta-line">
       ${weapon.rarity ? `<span class="badge">${escapeHtml(weapon.rarity)}</span>` : ""}
-      ${typeof weapon.purchaseCost === "number" ? `<span class="badge">${weapon.purchaseCost.toLocaleString()} credits</span>` : ""}
+      ${typeof weapon.purchaseCost === "number"
+        ? `<span class="badge">${weapon.purchaseCost.toLocaleString()} credits</span>`
+        : ""}
+      ${typeof weapon.schemaCost === "number"
+        ? `<span class="badge">Schema ${weapon.schemaCost.toLocaleString()} credits</span>`
+        : ""}
+      ${weapon.sourceContext === "schema"
+        ? `<span class="badge">Schema verified</span>`
+        : ""}
       <span class="status-badge ${escapeHtml(weapon.verificationStatus)}">
         ${escapeHtml(statusLabel(weapon.verificationStatus))}
       </span>
@@ -310,22 +326,40 @@ function renderCatalog() {
 
 function populateComparisonSelectors() {
   const records = getCompatibleRecords();
-  const options = records.map((record, index) => {
-    const mod = getMod(record.modSlug);
-    return `<option value="${index}">${escapeHtml(mod.rarity)} ${escapeHtml(mod.name)}</option>`;
-  }).join("");
-
   const a = document.getElementById("compare-a");
   const b = document.getElementById("compare-b");
-  a.innerHTML = options;
-  b.innerHTML = options;
-  a.value = "0";
-  b.value = records.length > 1 ? "1" : "0";
 
   const profiles = state.data["scoring-profiles"].map(profile =>
     `<option value="${escapeHtml(profile.id)}">${escapeHtml(profile.name)}</option>`
   ).join("");
   document.getElementById("profile-select").innerHTML = profiles;
+
+  if (!records.length) {
+    const emptyOption = `<option value="">No verified compatible mods yet</option>`;
+    a.innerHTML = emptyOption;
+    b.innerHTML = emptyOption;
+    a.disabled = true;
+    b.disabled = true;
+    document.getElementById("comparison-winner").textContent = "NO MOD DATA";
+    document.getElementById("compare-card-a").innerHTML =
+      `<p class="muted">Add a verified mod compatibility record for this weapon.</p>`;
+    document.getElementById("compare-card-b").innerHTML =
+      `<p class="muted">Comparison will activate after at least one record is added.</p>`;
+    document.getElementById("comparison-table").innerHTML = "";
+    return;
+  }
+
+  a.disabled = false;
+  b.disabled = false;
+  const options = records.map((record, index) => {
+    const mod = getMod(record.modSlug);
+    return `<option value="${index}">${escapeHtml(mod.rarity)} ${escapeHtml(mod.name)}</option>`;
+  }).join("");
+
+  a.innerHTML = options;
+  b.innerHTML = options;
+  a.value = "0";
+  b.value = records.length > 1 ? "1" : "0";
 }
 
 function modifiedValue(weapon, record, stat) {

@@ -5,7 +5,23 @@ weapon-specific Marathon mod records.
 
 ## Version
 
-**0.3.1**
+**0.3.3**
+
+## What changed in v0.3.3
+
+- Added four live-verified weapons found through Schemas
+- Added Outland, V85 Circuit Breaker, V00 Zeus RG, and Longshot
+- Expanded the public catalog to 23 weapon profiles
+- Added separate schema-cost and schema-source labels
+- Preserved missing magazine values instead of inferring them
+
+## What changed in v0.3.2
+
+- Added 17 live-verified Standard weapon profiles from the batch screenshots
+- Expanded the public catalog to 19 total weapons
+- Added Accuracy, Charge Time, and Volt Drain stat support
+- Added clean empty states for weapons without verified mod records
+- Added one dated provenance observation per captured weapon
 
 ## What changed in v0.3.1
 
