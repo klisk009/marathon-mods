@@ -142,7 +142,7 @@ Exact pairings continue to use:
 
 ## v0.5 local user data
 
-Owned mods, builds, Cradle progress, and scan drafts are stored in browser `localStorage` and are not published in the repository. Inventory screenshots are previewed in memory and are not persisted in v0.5.0-dev.
+Owned mods, builds, Cradle progress, and scan drafts are stored in browser `localStorage` and are not published in the repository. Inventory screenshots are previewed in memory and are not persisted in v0.5.1-dev.
 
 ## Firing-cycle magazine metadata
 

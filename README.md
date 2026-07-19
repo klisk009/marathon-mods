@@ -1,4 +1,4 @@
-# Marathon Companion Lab — v0.5.0-dev
+# Marathon Companion Lab — v0.5.1-dev
 
 This development release pivots the project from a single-page mod evaluator into a clickable companion-app foundation.
 

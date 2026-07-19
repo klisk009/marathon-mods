@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0e0d">
   <meta name="description" content="A community-supported Marathon companion for builds, verified data, Cradle planning, and inventory tracking.">
-  <title>Marathon Companion · v0.5 Dev</title>
+  <title>Marathon Companion · v0.5.1 Dev</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="styles.css">
@@ -45,7 +45,7 @@
       <section class="view active" data-view="home">
         <div class="hero-card">
           <div>
-            <p class="eyebrow">Version 0.5 development branch</p>
+            <p class="eyebrow">Version 0.5.1 development branch</p>
             <h2>Plan the run before risking the gear.</h2>
             <p>Verified weapon data, weapon-specific mod effects, build calculations, Cradle projections, and a foundation for screenshot-assisted inventory scans.</p>
             <div class="action-row">
@@ -64,7 +64,7 @@
           <article class="metric-card"><span>Weapons</span><strong id="weapon-count">—</strong><small>Live profiles</small></article>
           <article class="metric-card"><span>Mods</span><strong id="mod-count">—</strong><small>Rarity variants</small></article>
           <article class="metric-card"><span>Exact pairings</span><strong id="pairing-count">—</strong><small>Safe to calculate</small></article>
-          <article class="metric-card"><span>Owned</span><strong id="owned-count">0</strong><small>Stored on this device</small></article>
+          <article class="metric-card"><span>Owned</span><strong id="owned-count">0</strong><small>Owned copies on this device</small></article>
         </div>
 
         <div class="dashboard-grid">
@@ -97,7 +97,7 @@
           <label class="search-box"><span>⌕</span><input id="database-search" type="search" placeholder="Search weapons, mods, slots, effects…"></label>
           <label class="field compact-field"><span>Filter</span><select id="database-filter"><option value="">All</option></select></label>
         </div>
-        <div id="database-results" class="database-grid"></div>
+        <div id="database-results" class="database-groups"></div>
         <div id="database-empty" class="empty-card" hidden>No matching records.</div>
       </section>
 
@@ -117,6 +117,7 @@
           <section class="panel build-output">
             <div class="panel-heading"><div><p class="eyebrow">Calculated result</p><h3 id="build-title">Select a weapon</h3></div><span id="build-confidence" class="status-chip verified">Verified</span></div>
             <div id="build-summary" class="build-summary"></div>
+            <div id="build-impact-heatmap" class="impact-heatmap"></div>
             <div id="build-stat-table" class="stat-table"></div>
           </section>
         </div>

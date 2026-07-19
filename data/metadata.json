@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "appVersion": "0.5.0-dev",
+  "appVersion": "0.5.1-dev",
   "season": 2,
   "generatedOn": "2026-07-19",
   "publicDataPolicy": "Only live-verified or user-created records are published.",
@@ -25,6 +25,9 @@
     "cradle_calculator_demo",
     "inventory_upload_foundation",
     "local_storage",
-    "pwa"
+    "pwa",
+    "grouped_database",
+    "inventory_quantities",
+    "build_impact_heatmap"
   ]
 }

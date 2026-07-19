@@ -43,8 +43,8 @@ def main() -> None:
     observations = load_json("observations.json")
     profiles = load_json("scoring-profiles.json")
 
-    if metadata.get("appVersion") != "0.5.0-dev":
-        raise ValueError("metadata.json appVersion must be 0.5.0-dev")
+    if metadata.get("appVersion") != "0.5.1-dev":
+        raise ValueError("metadata.json appVersion must be 0.5.1-dev")
 
     weapon_slugs = require_unique(weapons, "slug", "weapon")
     mod_slugs = require_unique(mods, "slug", "mod")
