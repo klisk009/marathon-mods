@@ -1,14 +1,691 @@
 [
   {
-    "slug": "ironhold-barrel-deluxe",
-    "name": "Ironhold Barrel",
-    "familySlug": "ironhold-barrel",
-    "rarity": "Deluxe",
-    "slot": "Barrel",
-    "description": "Improves weapon stability and ready speed.",
-    "verificationStatus": "live_verified",
+    "slug": "balanced-mag-enhanced",
+    "name": "Balanced Mag",
+    "familySlug": "balanced-mag",
+    "rarity": "Enhanced",
+    "slot": "Magazine",
+    "weaponClass": "Pistol",
+    "description": "Slightly increases magazine size, reload speed, and range.",
+    "verificationStatus": "live_observed",
     "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot"
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144649.png",
+    "inventoryDisplayValue": 42,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.13,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 1,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 3,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "CE Tactical Sidearm",
+      "D54 Battle Pistol",
+      "KKV-9SD"
+    ],
+    "compatibleWeaponSlugs": [
+      "ce-tactical-sidearm",
+      "d54-battle-pistol",
+      "kkv-9sd"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "combat-mag-deluxe",
+    "name": "Combat Mag",
+    "familySlug": "combat-mag",
+    "rarity": "Deluxe",
+    "slot": "Magazine",
+    "weaponClass": "Precision",
+    "description": "Increases magazine size and reload speed.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 145126.png",
+    "inventoryDisplayValue": 207,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.95,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 4,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR",
+      "Longshot"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "br33-volley-rifle",
+      "twin-tap-hbr",
+      "longshot"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Vector Rounds",
+    "abilityDescription": "After aiming down sights for a short duration, this weapon's next shot reveals nearby structures and hostiles."
+  },
+  {
+    "slug": "combat-mag-superior",
+    "name": "Combat Mag",
+    "familySlug": "combat-mag",
+    "rarity": "Superior",
+    "slot": "Magazine",
+    "weaponClass": "Precision",
+    "description": "Greatly increases magazine size and reload speed.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "inventoryDisplayValue": 621,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.55,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 12,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_specific_examples_available",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR",
+      "Longshot"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "br33-volley-rifle",
+      "twin-tap-hbr",
+      "longshot"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Vector Rounds",
+    "abilityDescription": "After aiming down sights for a short duration, this weapon's next shot reveals nearby structures and hostiles.",
+    "notes": "Exact screenshot currently captured on Twin Tap HBR."
+  },
+  {
+    "slug": "compartmental-mag-ii-deluxe",
+    "name": "Compartmental Mag II",
+    "familySlug": "compartmental-mag-ii",
+    "rarity": "Deluxe",
+    "slot": "Magazine",
+    "weaponClass": "Shotgun",
+    "description": "Increases magazine size, range, and reload speed.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144935.png",
+    "inventoryDisplayValue": 180,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.08,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 1,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 2,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Misriah 2442"
+    ],
+    "compatibleWeaponSlugs": [
+      "misriah-2442"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "darksight-lens-deluxe",
+    "name": "Darksight Lens",
+    "familySlug": "darksight-lens",
+    "rarity": "Deluxe",
+    "slot": "Optic",
+    "weaponClass": "Pistol",
+    "description": "Increases ADS speed and aim assist.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "inventoryDisplayValue": 234,
+    "observedEffects": [
+      {
+        "stat": "adsSpeed",
+        "delta": -0.05,
+        "unit": "seconds"
+      },
+      {
+        "stat": "aimAssist",
+        "delta": 0.05,
+        "unit": "degrees"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": -0.1,
+        "unit": "multiplier"
+      }
+    ],
+    "observedEffectContext": "weapon_specific_examples_available",
+    "compatibleWeaponNames": [
+      "CE Tactical Sidearm",
+      "Magnum MC",
+      "V11 Punch",
+      "KKV-9SD"
+    ],
+    "compatibleWeaponSlugs": [
+      "ce-tactical-sidearm",
+      "magnum-mc",
+      "v11-punch",
+      "kkv-9sd"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Darksight Scope",
+    "abilityDescription": "Press to reveal structures and hostiles."
+  },
+  {
+    "slug": "darksight-scope-deluxe",
+    "name": "Darksight Scope",
+    "familySlug": "darksight-scope",
+    "rarity": "Deluxe",
+    "slot": "Optic",
+    "weaponClass": "Precision",
+    "description": "Increases ADS accuracy and aim assist.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 145053.png",
+    "inventoryDisplayValue": 234,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.18,
+        "unit": "degrees"
+      },
+      {
+        "stat": "aimAssist",
+        "delta": 0.03,
+        "unit": "degrees"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.2,
+        "unit": "multiplier"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "Repeater HPR",
+      "V66 Lookout",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "repeater-hpr",
+      "v66-lookout",
+      "br33-volley-rifle",
+      "twin-tap-hbr"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Darksight Scope",
+    "abilityDescription": "Press to reveal structures and hostiles."
+  },
+  {
+    "slug": "darksight-scope-superior",
+    "name": "Darksight Scope",
+    "familySlug": "darksight-scope",
+    "rarity": "Superior",
+    "slot": "Optic",
+    "weaponClass": "Precision",
+    "description": "Greatly increases ADS accuracy and aim assist.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 145112.png",
+    "inventoryDisplayValue": null,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.31,
+        "unit": "degrees"
+      },
+      {
+        "stat": "aimAssist",
+        "delta": 0.06,
+        "unit": "degrees"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.2,
+        "unit": "multiplier"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "Repeater HPR",
+      "V66 Lookout",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "repeater-hpr",
+      "v66-lookout",
+      "br33-volley-rifle",
+      "twin-tap-hbr"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Darksight Scope",
+    "abilityDescription": "Press to reveal structures and hostiles.",
+    "notes": "The inventory value was cropped in the screenshot."
+  },
+  {
+    "slug": "drum-mag-enhanced",
+    "name": "Drum Mag",
+    "familySlug": "drum-mag",
+    "rarity": "Enhanced",
+    "slot": "Magazine",
+    "weaponClass": "Assault",
+    "description": "Increases magazine size.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 145009.png",
+    "inventoryDisplayValue": 78,
+    "observedEffects": [
+      {
+        "stat": "magazineSize",
+        "delta": 12,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "M77 Assault Rifle",
+      "Overrun AR",
+      "Impact H-AR",
+      "Copperhead RF",
+      "Bully SMG"
+    ],
+    "compatibleWeaponSlugs": [
+      "m77-assault-rifle",
+      "overrun-ar",
+      "impact-har",
+      "copperhead-rf",
+      "bully-smg"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "drum-mag-superior",
+    "name": "Drum Mag",
+    "familySlug": "drum-mag",
+    "rarity": "Superior",
+    "slot": "Magazine",
+    "weaponClass": "Assault",
+    "description": "Massively increases magazine size.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144708.png",
+    "inventoryDisplayValue": 702,
+    "observedEffects": [
+      {
+        "stat": "magazineSize",
+        "delta": 24,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "M77 Assault Rifle",
+      "Overrun AR",
+      "Impact H-AR",
+      "Copperhead RF",
+      "Bully SMG"
+    ],
+    "compatibleWeaponSlugs": [
+      "m77-assault-rifle",
+      "overrun-ar",
+      "impact-har",
+      "copperhead-rf",
+      "bully-smg"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "fastload-mag-ii-deluxe",
+    "name": "Fastload Mag II",
+    "familySlug": "fastload-mag-ii",
+    "rarity": "Deluxe",
+    "slot": "Magazine",
+    "weaponClass": "Shotgun",
+    "description": "Increases reload speed and magazine size.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144905.png",
+    "inventoryDisplayValue": 180,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.15,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 1,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Misriah 2442"
+    ],
+    "compatibleWeaponSlugs": [
+      "misriah-2442"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Vector Rounds",
+    "abilityDescription": "After aiming down sights for a short duration, this weapon's next shot reveals nearby structures and hostiles."
+  },
+  {
+    "slug": "feather-mag-enhanced",
+    "name": "Feather Mag",
+    "familySlug": "feather-mag",
+    "rarity": "Enhanced",
+    "slot": "Magazine",
+    "weaponClass": "Precision",
+    "description": "Slightly increases magazine size, reload speed, and range.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 145046.png",
+    "inventoryDisplayValue": 69,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.2,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 4,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 2,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR",
+      "Longshot"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "br33-volley-rifle",
+      "twin-tap-hbr",
+      "longshot"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "feather-mag-deluxe",
+    "name": "Feather Mag",
+    "familySlug": "feather-mag",
+    "rarity": "Deluxe",
+    "slot": "Magazine",
+    "weaponClass": "Precision",
+    "description": "Increases magazine size, reload speed, and range.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144754.png",
+    "inventoryDisplayValue": 207,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.39,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 5,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 4,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR",
+      "Longshot"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "br33-volley-rifle",
+      "twin-tap-hbr",
+      "longshot"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "hi-cap-mag-deluxe",
+    "name": "Hi-Cap Mag",
+    "familySlug": "hi-cap-mag",
+    "rarity": "Deluxe",
+    "slot": "Magazine",
+    "weaponClass": "Precision",
+    "description": "Greatly increases magazine size.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 145119.png",
+    "inventoryDisplayValue": 234,
+    "observedEffects": [
+      {
+        "stat": "magazineSize",
+        "delta": 10,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR",
+      "Longshot"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "br33-volley-rifle",
+      "twin-tap-hbr",
+      "longshot"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "notes": "Screenshot shows +10. User separately confirmed +20 on Twin Tap HBR and +30 on BR33 Volley Rifle."
+  },
+  {
+    "slug": "hi-zoom-optic-deluxe",
+    "name": "Hi-Zoom Optic",
+    "familySlug": "hi-zoom-optic",
+    "rarity": "Deluxe",
+    "slot": "Optic",
+    "weaponClass": "Precision",
+    "description": "Greatly increases zoom and increases range and ADS accuracy.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144758.png",
+    "inventoryDisplayValue": 207,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.31,
+        "unit": "degrees"
+      },
+      {
+        "stat": "range",
+        "delta": 11,
+        "unit": "meters"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 1.6,
+        "unit": "multiplier"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "Repeater HPR",
+      "V66 Lookout",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "repeater-hpr",
+      "v66-lookout",
+      "br33-volley-rifle",
+      "twin-tap-hbr"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "hipshot-grip-deluxe",
+    "name": "Hipshot Grip",
+    "familySlug": "hipshot-grip",
+    "rarity": "Deluxe",
+    "slot": "Grip",
+    "weaponClass": "Shotgun",
+    "description": "Slightly increases accuracy when firing from the hip and accuracy while moving.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144929.png",
+    "inventoryDisplayValue": 180,
+    "observedEffects": [
+      {
+        "stat": "spreadAngle",
+        "delta": -1.12,
+        "unit": "degrees"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "WSTR Combat Shotgun",
+      "Misriah 2442",
+      "V85 Circuit Breaker"
+    ],
+    "compatibleWeaponSlugs": [
+      "wstr-combat-shotgun",
+      "misriah-2442",
+      "v85-circuit-breaker"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "hollow-case-rounds-deluxe",
+    "name": "Hollow-Case Rounds",
+    "familySlug": "hollow-case-rounds",
+    "rarity": "Deluxe",
+    "slot": "Magazine",
+    "weaponClass": "Assault",
+    "description": "Increases magazine size, reload speed, and range.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144725.png",
+    "inventoryDisplayValue": 207,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.25,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 5,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 6,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "M77 Assault Rifle",
+      "Overrun AR",
+      "Impact H-AR",
+      "Copperhead RF",
+      "Bully SMG"
+    ],
+    "compatibleWeaponSlugs": [
+      "m77-assault-rifle",
+      "overrun-ar",
+      "impact-har",
+      "copperhead-rf",
+      "bully-smg"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
   },
   {
     "slug": "ironhold-barrel-enhanced",
@@ -46,6 +723,582 @@
       "ce-tactical-sidearm",
       "d54-battle-pistol",
       "magnum-mc"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "ironhold-barrel-deluxe",
+    "name": "Ironhold Barrel",
+    "familySlug": "ironhold-barrel",
+    "rarity": "Deluxe",
+    "slot": "Barrel",
+    "description": "Improves weapon stability and ready speed.",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot"
+  },
+  {
+    "slug": "mega-drive-deluxe",
+    "name": "Mega Drive",
+    "familySlug": "mega-drive",
+    "rarity": "Deluxe",
+    "slot": "Magazine",
+    "weaponClass": "Railgun",
+    "description": "Greatly increases magazine size.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144956.png",
+    "inventoryDisplayValue": 234,
+    "observedEffects": [
+      {
+        "stat": "magazineSize",
+        "delta": 4,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "ARES RG"
+    ],
+    "compatibleWeaponSlugs": [
+      "ares-rg"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "midsight-optic-enhanced",
+    "name": "Midsight Optic",
+    "familySlug": "midsight-optic",
+    "rarity": "Enhanced",
+    "slot": "Optic",
+    "weaponClass": "Assault",
+    "description": "Increases zoom and slightly increases accuracy while moving, ADS accuracy, and ADS speed.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 145014.png",
+    "inventoryDisplayValue": 69,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.03,
+        "unit": "degrees"
+      },
+      {
+        "stat": "movingInaccuracy",
+        "delta": -9.1,
+        "unit": "percent"
+      },
+      {
+        "stat": "adsSpeed",
+        "delta": -0.05,
+        "unit": "seconds"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.4,
+        "unit": "multiplier"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Overrun AR",
+      "Impact H-AR",
+      "V75 SCAR",
+      "BRRT SMG",
+      "Copperhead RF",
+      "Bully SMG"
+    ],
+    "compatibleWeaponSlugs": [
+      "overrun-ar",
+      "impact-har",
+      "v75-scar",
+      "brrt-smg",
+      "copperhead-rf",
+      "bully-smg"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "pinpoint-barrel-superior",
+    "name": "Pinpoint Barrel",
+    "familySlug": "pinpoint-barrel",
+    "rarity": "Superior",
+    "slot": "Underbarrel",
+    "weaponClass": "Shotgun",
+    "description": "Greatly increases stability and range.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144915.png",
+    "inventoryDisplayValue": 540,
+    "observedEffects": [
+      {
+        "stat": "recoil",
+        "delta": -35.0,
+        "unit": "percent"
+      },
+      {
+        "stat": "range",
+        "delta": 4,
+        "unit": "meters"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "WSTR Combat Shotgun",
+      "Misriah 2442"
+    ],
+    "compatibleWeaponSlugs": [
+      "wstr-combat-shotgun",
+      "misriah-2442"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "precision-barrel-deluxe",
+    "name": "Precision Barrel",
+    "familySlug": "precision-barrel",
+    "rarity": "Deluxe",
+    "slot": "Barrel",
+    "weaponClass": "CQC",
+    "description": "Increased ADS accuracy and range.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "inventoryDisplayValue": 180,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.35,
+        "unit": "degrees"
+      },
+      {
+        "stat": "range",
+        "delta": 5,
+        "unit": "meters"
+      }
+    ],
+    "observedEffectContext": "weapon_specific_examples_available",
+    "compatibleWeaponNames": [
+      "BRRT SMG",
+      "Copperhead RF",
+      "Bully SMG",
+      "CE Tactical Sidearm",
+      "D54 Battle Pistol",
+      "Magnum MC"
+    ],
+    "compatibleWeaponSlugs": [
+      "brrt-smg",
+      "copperhead-rf",
+      "bully-smg",
+      "ce-tactical-sidearm",
+      "d54-battle-pistol",
+      "magnum-mc"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "precision-barrel-superior",
+    "name": "Precision Barrel",
+    "familySlug": "precision-barrel",
+    "rarity": "Superior",
+    "slot": "Barrel",
+    "weaponClass": "CQC",
+    "description": "Greatly increases ADS accuracy and range.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "inventoryDisplayValue": 540,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.5,
+        "unit": "degrees"
+      },
+      {
+        "stat": "range",
+        "delta": 6,
+        "unit": "meters"
+      }
+    ],
+    "observedEffectContext": "weapon_specific_examples_available",
+    "compatibleWeaponNames": [
+      "BRRT SMG",
+      "Copperhead RF",
+      "Bully SMG",
+      "CE Tactical Sidearm",
+      "D54 Battle Pistol",
+      "Magnum MC"
+    ],
+    "compatibleWeaponSlugs": [
+      "brrt-smg",
+      "copperhead-rf",
+      "bully-smg",
+      "ce-tactical-sidearm",
+      "d54-battle-pistol",
+      "magnum-mc"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "quickdraw-grip-deluxe",
+    "name": "Quickdraw Grip",
+    "familySlug": "quickdraw-grip",
+    "rarity": "Deluxe",
+    "slot": "Grip",
+    "weaponClass": "Shotgun",
+    "description": "Increases movement speed with this weapon and ready speed.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144910.png",
+    "inventoryDisplayValue": 180,
+    "observedEffects": [
+      {
+        "stat": "equipSpeed",
+        "delta": -0.3,
+        "unit": "seconds"
+      },
+      {
+        "stat": "weight",
+        "delta": -6.0,
+        "unit": "percent"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "WSTR Combat Shotgun",
+      "Misriah 2442",
+      "V85 Circuit Breaker"
+    ],
+    "compatibleWeaponSlugs": [
+      "wstr-combat-shotgun",
+      "misriah-2442",
+      "v85-circuit-breaker"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "notes": "A duplicate screenshot of this same mod was also present."
+  },
+  {
+    "slug": "rangefinder-lens-deluxe",
+    "name": "Rangefinder Lens",
+    "familySlug": "rangefinder-lens",
+    "rarity": "Deluxe",
+    "slot": "Optic",
+    "weaponClass": "Pistol",
+    "description": "Slightly increases zoom and increases ADS accuracy, range, and accuracy while moving.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "inventoryDisplayValue": 153,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.14,
+        "unit": "degrees"
+      },
+      {
+        "stat": "movingInaccuracy",
+        "delta": -10.9,
+        "unit": "percent"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.2,
+        "unit": "multiplier"
+      }
+    ],
+    "observedEffectContext": "weapon_specific_examples_available",
+    "compatibleWeaponNames": [
+      "CE Tactical Sidearm",
+      "Magnum MC",
+      "V11 Punch",
+      "KKV-9SD"
+    ],
+    "compatibleWeaponSlugs": [
+      "ce-tactical-sidearm",
+      "magnum-mc",
+      "v11-punch",
+      "kkv-9sd"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Rangefinder",
+    "abilityDescription": "Uses laser pulses to measure distance to the target.",
+    "notes": "Magnum tooltip description mentions range, but no numeric range delta was displayed."
+  },
+  {
+    "slug": "rangefinder-optic-deluxe",
+    "name": "Rangefinder Optic",
+    "familySlug": "rangefinder-optic",
+    "rarity": "Deluxe",
+    "slot": "Optic",
+    "weaponClass": "Precision",
+    "description": "Increases zoom, ADS accuracy, accuracy while moving, and range.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 145108.png",
+    "inventoryDisplayValue": 207,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.18,
+        "unit": "degrees"
+      },
+      {
+        "stat": "movingInaccuracy",
+        "delta": -2.7,
+        "unit": "percent"
+      },
+      {
+        "stat": "range",
+        "delta": 10,
+        "unit": "meters"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.6,
+        "unit": "multiplier"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "Repeater HPR",
+      "V66 Lookout",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "repeater-hpr",
+      "v66-lookout",
+      "br33-volley-rifle",
+      "twin-tap-hbr"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Rangefinder",
+    "abilityDescription": "Uses laser pulses to measure distance to the target."
+  },
+  {
+    "slug": "rangefinder-optic-superior",
+    "name": "Rangefinder Optic",
+    "familySlug": "rangefinder-optic",
+    "rarity": "Superior",
+    "slot": "Optic",
+    "weaponClass": "Precision",
+    "description": "Increases zoom and greatly increases ADS accuracy, accuracy while moving, and range.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144830.png",
+    "inventoryDisplayValue": 621,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.11,
+        "unit": "degrees"
+      },
+      {
+        "stat": "movingInaccuracy",
+        "delta": -5.5,
+        "unit": "percent"
+      },
+      {
+        "stat": "range",
+        "delta": 24,
+        "unit": "meters"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.6,
+        "unit": "multiplier"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "Repeater HPR",
+      "V66 Lookout",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "repeater-hpr",
+      "v66-lookout",
+      "br33-volley-rifle",
+      "twin-tap-hbr"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Rangefinder",
+    "abilityDescription": "Uses laser pulses to measure distance to the target."
+  },
+  {
+    "slug": "reloader-mag-deluxe",
+    "name": "Reloader Mag",
+    "familySlug": "reloader-mag",
+    "rarity": "Deluxe",
+    "slot": "Magazine",
+    "weaponClass": "Assault",
+    "description": "Increases reload speed and magazine size.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144741.png",
+    "inventoryDisplayValue": 207,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.63,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 9,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "M77 Assault Rifle",
+      "Overrun AR",
+      "Impact H-AR",
+      "Copperhead RF",
+      "Bully SMG"
+    ],
+    "compatibleWeaponSlugs": [
+      "m77-assault-rifle",
+      "overrun-ar",
+      "impact-har",
+      "copperhead-rf",
+      "bully-smg"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Vector Rounds",
+    "abilityDescription": "After aiming down sights for a short duration, this weapon's next shot reveals nearby structures and hostiles."
+  },
+  {
+    "slug": "speed-scout-grip-enhanced",
+    "name": "Speed Scout Grip",
+    "familySlug": "speed-scout-grip",
+    "rarity": "Enhanced",
+    "slot": "Grip",
+    "weaponClass": "Rifle",
+    "description": "Slightly increases ADS speed and accuracy.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 145019.png",
+    "inventoryDisplayValue": 60,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.03,
+        "unit": "degrees"
+      },
+      {
+        "stat": "adsSpeed",
+        "delta": -0.07,
+        "unit": "seconds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "M77 Assault Rifle",
+      "Overrun AR",
+      "Impact H-AR"
+    ],
+    "compatibleWeaponSlugs": [
+      "m77-assault-rifle",
+      "overrun-ar",
+      "impact-har"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "speed-scout-grip-superior",
+    "name": "Speed Scout Grip",
+    "familySlug": "speed-scout-grip",
+    "rarity": "Superior",
+    "slot": "Grip",
+    "weaponClass": "Rifle",
+    "description": "Greatly increases ADS speed and accuracy.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144713.png",
+    "inventoryDisplayValue": 540,
+    "observedEffects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.22,
+        "unit": "degrees"
+      },
+      {
+        "stat": "adsSpeed",
+        "delta": -0.22,
+        "unit": "seconds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "M77 Assault Rifle",
+      "Overrun AR",
+      "Impact H-AR"
+    ],
+    "compatibleWeaponSlugs": [
+      "m77-assault-rifle",
+      "overrun-ar",
+      "impact-har"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot"
+  },
+  {
+    "slug": "stabilizing-mag-enhanced",
+    "name": "Stabilizing Mag",
+    "familySlug": "stabilizing-mag",
+    "rarity": "Enhanced",
+    "slot": "Magazine",
+    "weaponClass": "Precision",
+    "description": "Slightly increases magazine size and stability.",
+    "verificationStatus": "live_observed",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144825.png",
+    "inventoryDisplayValue": 69,
+    "observedEffects": [
+      {
+        "stat": "recoil",
+        "delta": -11.7,
+        "unit": "percent"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 12,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "Stryder M1T",
+      "Hardline PR",
+      "BR33 Volley Rifle",
+      "Twin Tap HBR",
+      "Longshot"
+    ],
+    "compatibleWeaponSlugs": [
+      "stryder-m1t",
+      "hardline-pr",
+      "br33-volley-rifle",
+      "twin-tap-hbr",
+      "longshot"
     ],
     "compatibilityListStatus": "visible_in_screenshot"
   },
@@ -188,15 +1441,40 @@
     "compatibilityListStatus": "visible_in_screenshot"
   },
   {
-    "slug": "weighted-barrel-enhanced",
-    "name": "Weighted Barrel",
-    "familySlug": "weighted-barrel",
-    "rarity": "Enhanced",
-    "slot": "Barrel",
-    "description": "Improves accuracy while moving and slightly increases aim assist.",
-    "verificationStatus": "live_verified",
+    "slug": "turbo-drive-superior",
+    "name": "Turbo Drive",
+    "familySlug": "turbo-drive",
+    "rarity": "Superior",
+    "slot": "Magazine",
+    "weaponClass": "Railgun",
+    "description": "Greatly increases magazine size and reload speed.",
+    "verificationStatus": "live_observed",
     "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot"
+    "sourceType": "in_game_screenshot",
+    "sourceScreenshot": "Screenshot 2026-07-18 144945.png",
+    "inventoryDisplayValue": 621,
+    "observedEffects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -1.51,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 2,
+        "unit": "rounds"
+      }
+    ],
+    "observedEffectContext": "weapon_unresolved",
+    "compatibleWeaponNames": [
+      "ARES RG"
+    ],
+    "compatibleWeaponSlugs": [
+      "ares-rg"
+    ],
+    "compatibilityListStatus": "visible_in_screenshot",
+    "abilityName": "Vector Rounds",
+    "abilityDescription": "After aiming down sights for a short duration, this weapon's next shot reveals nearby structures and hostiles."
   },
   {
     "slug": "turbo-generator-superior",
@@ -235,152 +1513,37 @@
     "compatibilityListStatus": "visible_in_screenshot"
   },
   {
-    "slug": "hipshot-grip-deluxe",
-    "name": "Hipshot Grip",
-    "familySlug": "hipshot-grip",
-    "rarity": "Deluxe",
-    "slot": "Grip",
-    "weaponClass": "Shotgun",
-    "description": "Slightly increases accuracy when firing from the hip and accuracy while moving.",
+    "slug": "versatile-stock-enhanced",
+    "name": "Versatile Stock",
+    "familySlug": "versatile-stock",
+    "rarity": "Enhanced",
+    "slot": "Shield",
+    "weaponClass": "Pistol",
+    "description": "Improves recoil and provides a folding option.",
     "verificationStatus": "live_observed",
     "verifiedOn": "2026-07-18",
     "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144929.png",
-    "inventoryDisplayValue": 180,
+    "sourceScreenshot": "Screenshot 2026-07-18 144859.png",
+    "inventoryDisplayValue": 51,
     "observedEffects": [
       {
-        "stat": "spreadAngle",
-        "delta": -1.12,
-        "unit": "degrees"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "WSTR Combat Shotgun",
-      "Misriah 2442",
-      "V85 Circuit Breaker"
-    ],
-    "compatibleWeaponSlugs": [
-      "wstr-combat-shotgun",
-      "misriah-2442",
-      "v85-circuit-breaker"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "quickdraw-grip-deluxe",
-    "name": "Quickdraw Grip",
-    "familySlug": "quickdraw-grip",
-    "rarity": "Deluxe",
-    "slot": "Grip",
-    "weaponClass": "Shotgun",
-    "description": "Increases movement speed with this weapon and ready speed.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144910.png",
-    "inventoryDisplayValue": 180,
-    "observedEffects": [
-      {
-        "stat": "equipSpeed",
-        "delta": -0.3,
-        "unit": "seconds"
-      },
-      {
-        "stat": "weight",
-        "delta": -6.0,
+        "stat": "recoil",
+        "delta": -13.0,
         "unit": "percent"
       }
     ],
     "observedEffectContext": "weapon_unresolved",
     "compatibleWeaponNames": [
-      "WSTR Combat Shotgun",
-      "Misriah 2442",
-      "V85 Circuit Breaker"
+      "KKV-9SD",
+      "D54 Battle Pistol"
     ],
     "compatibleWeaponSlugs": [
-      "wstr-combat-shotgun",
-      "misriah-2442",
-      "v85-circuit-breaker"
+      "kkv-9sd",
+      "d54-battle-pistol"
     ],
     "compatibilityListStatus": "visible_in_screenshot",
-    "notes": "A duplicate screenshot of this same mod was also present."
-  },
-  {
-    "slug": "speed-scout-grip-enhanced",
-    "name": "Speed Scout Grip",
-    "familySlug": "speed-scout-grip",
-    "rarity": "Enhanced",
-    "slot": "Grip",
-    "weaponClass": "Rifle",
-    "description": "Slightly increases ADS speed and accuracy.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 145019.png",
-    "inventoryDisplayValue": 60,
-    "observedEffects": [
-      {
-        "stat": "adsSpread",
-        "delta": -0.03,
-        "unit": "degrees"
-      },
-      {
-        "stat": "adsSpeed",
-        "delta": -0.07,
-        "unit": "seconds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "M77 Assault Rifle",
-      "Overrun AR",
-      "Impact H-AR"
-    ],
-    "compatibleWeaponSlugs": [
-      "m77-assault-rifle",
-      "overrun-ar",
-      "impact-har"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "speed-scout-grip-superior",
-    "name": "Speed Scout Grip",
-    "familySlug": "speed-scout-grip",
-    "rarity": "Superior",
-    "slot": "Grip",
-    "weaponClass": "Rifle",
-    "description": "Greatly increases ADS speed and accuracy.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144713.png",
-    "inventoryDisplayValue": 540,
-    "observedEffects": [
-      {
-        "stat": "adsSpread",
-        "delta": -0.22,
-        "unit": "degrees"
-      },
-      {
-        "stat": "adsSpeed",
-        "delta": -0.22,
-        "unit": "seconds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "M77 Assault Rifle",
-      "Overrun AR",
-      "Impact H-AR"
-    ],
-    "compatibleWeaponSlugs": [
-      "m77-assault-rifle",
-      "overrun-ar",
-      "impact-har"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
+    "abilityName": "Folding Stock",
+    "abilityDescription": "Folded: slightly improves hipfire recoil, accuracy, and ready speed. Unfolded: slightly improves ADS speed, recoil, and accuracy."
   },
   {
     "slug": "vigilant-grip-deluxe",
@@ -459,956 +1622,14 @@
     "compatibilityListStatus": "visible_in_screenshot"
   },
   {
-    "slug": "balanced-mag-enhanced",
-    "name": "Balanced Mag",
-    "familySlug": "balanced-mag",
+    "slug": "weighted-barrel-enhanced",
+    "name": "Weighted Barrel",
+    "familySlug": "weighted-barrel",
     "rarity": "Enhanced",
-    "slot": "Magazine",
-    "weaponClass": "Pistol",
-    "description": "Slightly increases magazine size, reload speed, and range.",
-    "verificationStatus": "live_observed",
+    "slot": "Barrel",
+    "description": "Improves accuracy while moving and slightly increases aim assist.",
+    "verificationStatus": "live_verified",
     "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144649.png",
-    "inventoryDisplayValue": 42,
-    "observedEffects": [
-      {
-        "stat": "reloadSpeed",
-        "delta": -0.13,
-        "unit": "seconds"
-      },
-      {
-        "stat": "range",
-        "delta": 1,
-        "unit": "meters"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 3,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "CE Tactical Sidearm",
-      "D54 Battle Pistol",
-      "KKV-9SD"
-    ],
-    "compatibleWeaponSlugs": [
-      "ce-tactical-sidearm",
-      "d54-battle-pistol",
-      "kkv-9sd"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "combat-mag-deluxe",
-    "name": "Combat Mag",
-    "familySlug": "combat-mag",
-    "rarity": "Deluxe",
-    "slot": "Magazine",
-    "weaponClass": "Precision",
-    "description": "Increases magazine size and reload speed.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 145126.png",
-    "inventoryDisplayValue": 207,
-    "observedEffects": [
-      {
-        "stat": "reloadSpeed",
-        "delta": -0.95,
-        "unit": "seconds"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 4,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR",
-      "Longshot"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "br33-volley-rifle",
-      "twin-tap-hbr",
-      "longshot"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "abilityName": "Vector Rounds",
-    "abilityDescription": "After aiming down sights for a short duration, this weapon's next shot reveals nearby structures and hostiles."
-  },
-  {
-    "slug": "compartmental-mag-ii-deluxe",
-    "name": "Compartmental Mag II",
-    "familySlug": "compartmental-mag-ii",
-    "rarity": "Deluxe",
-    "slot": "Magazine",
-    "weaponClass": "Shotgun",
-    "description": "Increases magazine size, range, and reload speed.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144935.png",
-    "inventoryDisplayValue": 180,
-    "observedEffects": [
-      {
-        "stat": "reloadSpeed",
-        "delta": -0.08,
-        "unit": "seconds"
-      },
-      {
-        "stat": "range",
-        "delta": 1,
-        "unit": "meters"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 2,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Misriah 2442"
-    ],
-    "compatibleWeaponSlugs": [
-      "misriah-2442"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "drum-mag-enhanced",
-    "name": "Drum Mag",
-    "familySlug": "drum-mag",
-    "rarity": "Enhanced",
-    "slot": "Magazine",
-    "weaponClass": "Assault",
-    "description": "Increases magazine size.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 145009.png",
-    "inventoryDisplayValue": 78,
-    "observedEffects": [
-      {
-        "stat": "magazineSize",
-        "delta": 12,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "M77 Assault Rifle",
-      "Overrun AR",
-      "Impact H-AR",
-      "Copperhead RF",
-      "Bully SMG"
-    ],
-    "compatibleWeaponSlugs": [
-      "m77-assault-rifle",
-      "overrun-ar",
-      "impact-har",
-      "copperhead-rf",
-      "bully-smg"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "drum-mag-superior",
-    "name": "Drum Mag",
-    "familySlug": "drum-mag",
-    "rarity": "Superior",
-    "slot": "Magazine",
-    "weaponClass": "Assault",
-    "description": "Massively increases magazine size.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144708.png",
-    "inventoryDisplayValue": 702,
-    "observedEffects": [
-      {
-        "stat": "magazineSize",
-        "delta": 24,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "M77 Assault Rifle",
-      "Overrun AR",
-      "Impact H-AR",
-      "Copperhead RF",
-      "Bully SMG"
-    ],
-    "compatibleWeaponSlugs": [
-      "m77-assault-rifle",
-      "overrun-ar",
-      "impact-har",
-      "copperhead-rf",
-      "bully-smg"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "fastload-mag-ii-deluxe",
-    "name": "Fastload Mag II",
-    "familySlug": "fastload-mag-ii",
-    "rarity": "Deluxe",
-    "slot": "Magazine",
-    "weaponClass": "Shotgun",
-    "description": "Increases reload speed and magazine size.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144905.png",
-    "inventoryDisplayValue": 180,
-    "observedEffects": [
-      {
-        "stat": "reloadSpeed",
-        "delta": -0.15,
-        "unit": "seconds"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 1,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Misriah 2442"
-    ],
-    "compatibleWeaponSlugs": [
-      "misriah-2442"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "abilityName": "Vector Rounds",
-    "abilityDescription": "After aiming down sights for a short duration, this weapon's next shot reveals nearby structures and hostiles."
-  },
-  {
-    "slug": "feather-mag-deluxe",
-    "name": "Feather Mag",
-    "familySlug": "feather-mag",
-    "rarity": "Deluxe",
-    "slot": "Magazine",
-    "weaponClass": "Precision",
-    "description": "Increases magazine size, reload speed, and range.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144754.png",
-    "inventoryDisplayValue": 207,
-    "observedEffects": [
-      {
-        "stat": "reloadSpeed",
-        "delta": -0.39,
-        "unit": "seconds"
-      },
-      {
-        "stat": "range",
-        "delta": 5,
-        "unit": "meters"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 4,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR",
-      "Longshot"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "br33-volley-rifle",
-      "twin-tap-hbr",
-      "longshot"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "feather-mag-enhanced",
-    "name": "Feather Mag",
-    "familySlug": "feather-mag",
-    "rarity": "Enhanced",
-    "slot": "Magazine",
-    "weaponClass": "Precision",
-    "description": "Slightly increases magazine size, reload speed, and range.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 145046.png",
-    "inventoryDisplayValue": 69,
-    "observedEffects": [
-      {
-        "stat": "reloadSpeed",
-        "delta": -0.2,
-        "unit": "seconds"
-      },
-      {
-        "stat": "range",
-        "delta": 4,
-        "unit": "meters"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 2,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR",
-      "Longshot"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "br33-volley-rifle",
-      "twin-tap-hbr",
-      "longshot"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "hi-cap-mag-deluxe",
-    "name": "Hi-Cap Mag",
-    "familySlug": "hi-cap-mag",
-    "rarity": "Deluxe",
-    "slot": "Magazine",
-    "weaponClass": "Precision",
-    "description": "Greatly increases magazine size.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 145119.png",
-    "inventoryDisplayValue": 234,
-    "observedEffects": [
-      {
-        "stat": "magazineSize",
-        "delta": 10,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR",
-      "Longshot"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "br33-volley-rifle",
-      "twin-tap-hbr",
-      "longshot"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "notes": "Screenshot shows +10. User separately confirmed +20 on Twin Tap HBR and +30 on BR33 Volley Rifle."
-  },
-  {
-    "slug": "hollow-case-rounds-deluxe",
-    "name": "Hollow-Case Rounds",
-    "familySlug": "hollow-case-rounds",
-    "rarity": "Deluxe",
-    "slot": "Magazine",
-    "weaponClass": "Assault",
-    "description": "Increases magazine size, reload speed, and range.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144725.png",
-    "inventoryDisplayValue": 207,
-    "observedEffects": [
-      {
-        "stat": "reloadSpeed",
-        "delta": -0.25,
-        "unit": "seconds"
-      },
-      {
-        "stat": "range",
-        "delta": 5,
-        "unit": "meters"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 6,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "M77 Assault Rifle",
-      "Overrun AR",
-      "Impact H-AR",
-      "Copperhead RF",
-      "Bully SMG"
-    ],
-    "compatibleWeaponSlugs": [
-      "m77-assault-rifle",
-      "overrun-ar",
-      "impact-har",
-      "copperhead-rf",
-      "bully-smg"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "mega-drive-deluxe",
-    "name": "Mega Drive",
-    "familySlug": "mega-drive",
-    "rarity": "Deluxe",
-    "slot": "Magazine",
-    "weaponClass": "Railgun",
-    "description": "Greatly increases magazine size.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144956.png",
-    "inventoryDisplayValue": 234,
-    "observedEffects": [
-      {
-        "stat": "magazineSize",
-        "delta": 4,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "ARES RG"
-    ],
-    "compatibleWeaponSlugs": [
-      "ares-rg"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "reloader-mag-deluxe",
-    "name": "Reloader Mag",
-    "familySlug": "reloader-mag",
-    "rarity": "Deluxe",
-    "slot": "Magazine",
-    "weaponClass": "Assault",
-    "description": "Increases reload speed and magazine size.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144741.png",
-    "inventoryDisplayValue": 207,
-    "observedEffects": [
-      {
-        "stat": "reloadSpeed",
-        "delta": -0.63,
-        "unit": "seconds"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 9,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "M77 Assault Rifle",
-      "Overrun AR",
-      "Impact H-AR",
-      "Copperhead RF",
-      "Bully SMG"
-    ],
-    "compatibleWeaponSlugs": [
-      "m77-assault-rifle",
-      "overrun-ar",
-      "impact-har",
-      "copperhead-rf",
-      "bully-smg"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "abilityName": "Vector Rounds",
-    "abilityDescription": "After aiming down sights for a short duration, this weapon's next shot reveals nearby structures and hostiles."
-  },
-  {
-    "slug": "stabilizing-mag-enhanced",
-    "name": "Stabilizing Mag",
-    "familySlug": "stabilizing-mag",
-    "rarity": "Enhanced",
-    "slot": "Magazine",
-    "weaponClass": "Precision",
-    "description": "Slightly increases magazine size and stability.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144825.png",
-    "inventoryDisplayValue": 69,
-    "observedEffects": [
-      {
-        "stat": "recoil",
-        "delta": -11.7,
-        "unit": "percent"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 12,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR",
-      "Longshot"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "br33-volley-rifle",
-      "twin-tap-hbr",
-      "longshot"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "turbo-drive-superior",
-    "name": "Turbo Drive",
-    "familySlug": "turbo-drive",
-    "rarity": "Superior",
-    "slot": "Magazine",
-    "weaponClass": "Railgun",
-    "description": "Greatly increases magazine size and reload speed.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144945.png",
-    "inventoryDisplayValue": 621,
-    "observedEffects": [
-      {
-        "stat": "reloadSpeed",
-        "delta": -1.51,
-        "unit": "seconds"
-      },
-      {
-        "stat": "magazineSize",
-        "delta": 2,
-        "unit": "rounds"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "ARES RG"
-    ],
-    "compatibleWeaponSlugs": [
-      "ares-rg"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "abilityName": "Vector Rounds",
-    "abilityDescription": "After aiming down sights for a short duration, this weapon's next shot reveals nearby structures and hostiles."
-  },
-  {
-    "slug": "darksight-scope-deluxe",
-    "name": "Darksight Scope",
-    "familySlug": "darksight-scope",
-    "rarity": "Deluxe",
-    "slot": "Optic",
-    "weaponClass": "Precision",
-    "description": "Increases ADS accuracy and aim assist.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 145053.png",
-    "inventoryDisplayValue": 234,
-    "observedEffects": [
-      {
-        "stat": "adsSpread",
-        "delta": -0.18,
-        "unit": "degrees"
-      },
-      {
-        "stat": "aimAssist",
-        "delta": 0.03,
-        "unit": "degrees"
-      },
-      {
-        "stat": "adsZoom",
-        "delta": 0.2,
-        "unit": "multiplier"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "Repeater HPR",
-      "V66 Lookout",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "repeater-hpr",
-      "v66-lookout",
-      "br33-volley-rifle",
-      "twin-tap-hbr"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "abilityName": "Darksight Scope",
-    "abilityDescription": "Press to reveal structures and hostiles."
-  },
-  {
-    "slug": "darksight-scope-superior",
-    "name": "Darksight Scope",
-    "familySlug": "darksight-scope",
-    "rarity": "Superior",
-    "slot": "Optic",
-    "weaponClass": "Precision",
-    "description": "Greatly increases ADS accuracy and aim assist.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 145112.png",
-    "inventoryDisplayValue": null,
-    "observedEffects": [
-      {
-        "stat": "adsSpread",
-        "delta": -0.31,
-        "unit": "degrees"
-      },
-      {
-        "stat": "aimAssist",
-        "delta": 0.06,
-        "unit": "degrees"
-      },
-      {
-        "stat": "adsZoom",
-        "delta": 0.2,
-        "unit": "multiplier"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "Repeater HPR",
-      "V66 Lookout",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "repeater-hpr",
-      "v66-lookout",
-      "br33-volley-rifle",
-      "twin-tap-hbr"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "abilityName": "Darksight Scope",
-    "abilityDescription": "Press to reveal structures and hostiles.",
-    "notes": "The inventory value was cropped in the screenshot."
-  },
-  {
-    "slug": "hi-zoom-optic-deluxe",
-    "name": "Hi-Zoom Optic",
-    "familySlug": "hi-zoom-optic",
-    "rarity": "Deluxe",
-    "slot": "Optic",
-    "weaponClass": "Precision",
-    "description": "Greatly increases zoom and increases range and ADS accuracy.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144758.png",
-    "inventoryDisplayValue": 207,
-    "observedEffects": [
-      {
-        "stat": "adsSpread",
-        "delta": -0.31,
-        "unit": "degrees"
-      },
-      {
-        "stat": "range",
-        "delta": 11,
-        "unit": "meters"
-      },
-      {
-        "stat": "adsZoom",
-        "delta": 1.6,
-        "unit": "multiplier"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "Repeater HPR",
-      "V66 Lookout",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "repeater-hpr",
-      "v66-lookout",
-      "br33-volley-rifle",
-      "twin-tap-hbr"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "midsight-optic-enhanced",
-    "name": "Midsight Optic",
-    "familySlug": "midsight-optic",
-    "rarity": "Enhanced",
-    "slot": "Optic",
-    "weaponClass": "Assault",
-    "description": "Increases zoom and slightly increases accuracy while moving, ADS accuracy, and ADS speed.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 145014.png",
-    "inventoryDisplayValue": 69,
-    "observedEffects": [
-      {
-        "stat": "adsSpread",
-        "delta": -0.03,
-        "unit": "degrees"
-      },
-      {
-        "stat": "movingInaccuracy",
-        "delta": -9.1,
-        "unit": "percent"
-      },
-      {
-        "stat": "adsSpeed",
-        "delta": -0.05,
-        "unit": "seconds"
-      },
-      {
-        "stat": "adsZoom",
-        "delta": 0.4,
-        "unit": "multiplier"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Overrun AR",
-      "Impact H-AR",
-      "V75 SCAR",
-      "BRRT SMG",
-      "Copperhead RF",
-      "Bully SMG"
-    ],
-    "compatibleWeaponSlugs": [
-      "overrun-ar",
-      "impact-har",
-      "v75-scar",
-      "brrt-smg",
-      "copperhead-rf",
-      "bully-smg"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
-  },
-  {
-    "slug": "rangefinder-optic-deluxe",
-    "name": "Rangefinder Optic",
-    "familySlug": "rangefinder-optic",
-    "rarity": "Deluxe",
-    "slot": "Optic",
-    "weaponClass": "Precision",
-    "description": "Increases zoom, ADS accuracy, accuracy while moving, and range.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 145108.png",
-    "inventoryDisplayValue": 207,
-    "observedEffects": [
-      {
-        "stat": "adsSpread",
-        "delta": -0.18,
-        "unit": "degrees"
-      },
-      {
-        "stat": "movingInaccuracy",
-        "delta": -2.7,
-        "unit": "percent"
-      },
-      {
-        "stat": "range",
-        "delta": 10,
-        "unit": "meters"
-      },
-      {
-        "stat": "adsZoom",
-        "delta": 0.6,
-        "unit": "multiplier"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "Repeater HPR",
-      "V66 Lookout",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "repeater-hpr",
-      "v66-lookout",
-      "br33-volley-rifle",
-      "twin-tap-hbr"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "abilityName": "Rangefinder",
-    "abilityDescription": "Uses laser pulses to measure distance to the target."
-  },
-  {
-    "slug": "rangefinder-optic-superior",
-    "name": "Rangefinder Optic",
-    "familySlug": "rangefinder-optic",
-    "rarity": "Superior",
-    "slot": "Optic",
-    "weaponClass": "Precision",
-    "description": "Increases zoom and greatly increases ADS accuracy, accuracy while moving, and range.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144830.png",
-    "inventoryDisplayValue": 621,
-    "observedEffects": [
-      {
-        "stat": "adsSpread",
-        "delta": -0.11,
-        "unit": "degrees"
-      },
-      {
-        "stat": "movingInaccuracy",
-        "delta": -5.5,
-        "unit": "percent"
-      },
-      {
-        "stat": "range",
-        "delta": 24,
-        "unit": "meters"
-      },
-      {
-        "stat": "adsZoom",
-        "delta": 0.6,
-        "unit": "multiplier"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "Stryder M1T",
-      "Hardline PR",
-      "Repeater HPR",
-      "V66 Lookout",
-      "BR33 Volley Rifle",
-      "Twin Tap HBR"
-    ],
-    "compatibleWeaponSlugs": [
-      "stryder-m1t",
-      "hardline-pr",
-      "repeater-hpr",
-      "v66-lookout",
-      "br33-volley-rifle",
-      "twin-tap-hbr"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "abilityName": "Rangefinder",
-    "abilityDescription": "Uses laser pulses to measure distance to the target."
-  },
-  {
-    "slug": "versatile-stock-enhanced",
-    "name": "Versatile Stock",
-    "familySlug": "versatile-stock",
-    "rarity": "Enhanced",
-    "slot": "Shield",
-    "weaponClass": "Pistol",
-    "description": "Improves recoil and provides a folding option.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144859.png",
-    "inventoryDisplayValue": 51,
-    "observedEffects": [
-      {
-        "stat": "recoil",
-        "delta": -13.0,
-        "unit": "percent"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "KKV-9SD",
-      "D54 Battle Pistol"
-    ],
-    "compatibleWeaponSlugs": [
-      "kkv-9sd",
-      "d54-battle-pistol"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot",
-    "abilityName": "Folding Stock",
-    "abilityDescription": "Folded: slightly improves hipfire recoil, accuracy, and ready speed. Unfolded: slightly improves ADS speed, recoil, and accuracy."
-  },
-  {
-    "slug": "pinpoint-barrel-superior",
-    "name": "Pinpoint Barrel",
-    "familySlug": "pinpoint-barrel",
-    "rarity": "Superior",
-    "slot": "Underbarrel",
-    "weaponClass": "Shotgun",
-    "description": "Greatly increases stability and range.",
-    "verificationStatus": "live_observed",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "sourceScreenshot": "Screenshot 2026-07-18 144915.png",
-    "inventoryDisplayValue": 540,
-    "observedEffects": [
-      {
-        "stat": "recoil",
-        "delta": -35.0,
-        "unit": "percent"
-      },
-      {
-        "stat": "range",
-        "delta": 4,
-        "unit": "meters"
-      }
-    ],
-    "observedEffectContext": "weapon_unresolved",
-    "compatibleWeaponNames": [
-      "WSTR Combat Shotgun",
-      "Misriah 2442"
-    ],
-    "compatibleWeaponSlugs": [
-      "wstr-combat-shotgun",
-      "misriah-2442"
-    ],
-    "compatibilityListStatus": "visible_in_screenshot"
+    "sourceType": "in_game_screenshot"
   }
 ]

@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "appVersion": "0.4.0",
+  "appVersion": "0.5.0-dev",
   "season": 2,
-  "generatedOn": "2026-07-18",
+  "generatedOn": "2026-07-19",
   "publicDataPolicy": "Only live-verified or user-created records are published.",
   "dataCounts": {
     "weapons": 23,
-    "mods": 35,
-    "compatibilityRecords": 9,
+    "mods": 40,
+    "compatibilityRecords": 35,
     "observations": 58,
     "scoringProfiles": 1
   },
@@ -16,5 +16,15 @@
     "uniqueModVariants": 33,
     "duplicateScreenshots": 1,
     "exactWeaponPairingsAdded": 7
-  }
+  },
+  "releaseChannel": "development",
+  "features": [
+    "clickable_navigation",
+    "detail_drawer",
+    "build_lab_demo",
+    "cradle_calculator_demo",
+    "inventory_upload_foundation",
+    "local_storage",
+    "pwa"
+  ]
 }

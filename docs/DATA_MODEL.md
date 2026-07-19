@@ -138,3 +138,12 @@ Exact pairings continue to use:
   "verificationStatus": "live_verified"
 }
 ```
+
+
+## v0.5 local user data
+
+Owned mods, builds, Cradle progress, and scan drafts are stored in browser `localStorage` and are not published in the repository. Inventory screenshots are previewed in memory and are not persisted in v0.5.0-dev.
+
+## Firing-cycle magazine metadata
+
+Precision rifles may define `roundsPerFiringCycle`. Exact compatibility records remain authoritative, while this field supports later formula validation for magazine effects.

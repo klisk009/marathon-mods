@@ -1,23 +1,188 @@
 [
   {
-    "weaponSlug": "magnum-mc",
-    "modSlug": "weighted-barrel-enhanced",
+    "weaponSlug": "ares-rg",
+    "modSlug": "mega-drive-deluxe",
     "verificationStatus": "live_verified",
     "verifiedOn": "2026-07-18",
     "sourceType": "in_game_screenshot",
     "effects": [
       {
-        "stat": "movingInaccuracy",
-        "delta": -16.4,
+        "stat": "magazineSize",
+        "delta": 4,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Only compatible weapon shown; exact Ares RG pairing."
+  },
+  {
+    "weaponSlug": "ares-rg",
+    "modSlug": "turbo-drive-superior",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -1.51,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 2,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Only compatible weapon shown; exact Ares RG pairing."
+  },
+  {
+    "weaponSlug": "br33-volley-rifle",
+    "modSlug": "combat-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.78,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 12,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "br33-volley-rifle",
+    "modSlug": "feather-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.4,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 7,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 12,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "br33-volley-rifle",
+    "modSlug": "feather-mag-enhanced",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.14,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 4,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 6,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "br33-volley-rifle",
+    "modSlug": "hi-cap-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "magazineSize",
+        "delta": 30,
+        "unit": "rounds"
+      }
+    ],
+    "note": "User-confirmed live value."
+  },
+  {
+    "weaponSlug": "m77-assault-rifle",
+    "modSlug": "speed-scout-grip-superior",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.22,
+        "unit": "degrees"
+      },
+      {
+        "stat": "adsSpeed",
+        "delta": -0.22,
+        "unit": "seconds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "m77-assault-rifle",
+    "modSlug": "vigilant-grip-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "equipSpeed",
+        "delta": -0.14,
+        "unit": "seconds"
+      },
+      {
+        "stat": "recoil",
+        "delta": -12.0,
         "unit": "percent"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "magnum-mc",
+    "modSlug": "darksight-lens-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "adsSpeed",
+        "delta": -0.05,
+        "unit": "seconds"
       },
       {
         "stat": "aimAssist",
         "delta": 0.05,
         "unit": "degrees"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": -0.1,
+        "unit": "multiplier"
       }
     ],
-    "note": "Season 2 Magnum MC tooltip values."
+    "note": "Live tooltip captured on the named weapon."
   },
   {
     "weaponSlug": "magnum-mc",
@@ -40,24 +205,89 @@
     "note": "Season 2 Magnum MC tooltip values; supersedes older community figures."
   },
   {
-    "weaponSlug": "misriah-2442",
-    "modSlug": "fastload-mag-ii-deluxe",
+    "weaponSlug": "magnum-mc",
+    "modSlug": "precision-barrel-deluxe",
     "verificationStatus": "live_verified",
     "verifiedOn": "2026-07-18",
     "sourceType": "in_game_screenshot",
     "effects": [
       {
-        "stat": "reloadSpeed",
-        "delta": -0.15,
-        "unit": "seconds"
+        "stat": "adsSpread",
+        "delta": -0.35,
+        "unit": "degrees"
       },
       {
-        "stat": "magazineSize",
-        "delta": 1,
-        "unit": "rounds"
+        "stat": "range",
+        "delta": 5,
+        "unit": "meters"
       }
     ],
-    "note": "Only compatible weapon shown; exact Misriah 2442 pairing."
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "magnum-mc",
+    "modSlug": "precision-barrel-superior",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.5,
+        "unit": "degrees"
+      },
+      {
+        "stat": "range",
+        "delta": 6,
+        "unit": "meters"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "magnum-mc",
+    "modSlug": "rangefinder-lens-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.14,
+        "unit": "degrees"
+      },
+      {
+        "stat": "movingInaccuracy",
+        "delta": -10.9,
+        "unit": "percent"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.2,
+        "unit": "multiplier"
+      }
+    ],
+    "note": "No numeric range delta was shown despite the tooltip description."
+  },
+  {
+    "weaponSlug": "magnum-mc",
+    "modSlug": "weighted-barrel-enhanced",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "movingInaccuracy",
+        "delta": -16.4,
+        "unit": "percent"
+      },
+      {
+        "stat": "aimAssist",
+        "delta": 0.05,
+        "unit": "degrees"
+      }
+    ],
+    "note": "Season 2 Magnum MC tooltip values."
   },
   {
     "weaponSlug": "misriah-2442",
@@ -85,16 +315,121 @@
     "note": "Only compatible weapon shown; exact Misriah 2442 pairing."
   },
   {
-    "weaponSlug": "ares-rg",
-    "modSlug": "turbo-drive-superior",
+    "weaponSlug": "misriah-2442",
+    "modSlug": "fastload-mag-ii-deluxe",
     "verificationStatus": "live_verified",
     "verifiedOn": "2026-07-18",
     "sourceType": "in_game_screenshot",
     "effects": [
       {
         "stat": "reloadSpeed",
-        "delta": -1.51,
+        "delta": -0.15,
         "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 1,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Only compatible weapon shown; exact Misriah 2442 pairing."
+  },
+  {
+    "weaponSlug": "misriah-2442",
+    "modSlug": "hipshot-grip-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "spreadAngle",
+        "delta": -1.12,
+        "unit": "degrees"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "misriah-2442",
+    "modSlug": "quickdraw-grip-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "equipSpeed",
+        "delta": -0.3,
+        "unit": "seconds"
+      },
+      {
+        "stat": "weight",
+        "delta": -6.0,
+        "unit": "percent"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "stryder-m1t",
+    "modSlug": "combat-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.95,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 4,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "stryder-m1t",
+    "modSlug": "feather-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.39,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 5,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 4,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "stryder-m1t",
+    "modSlug": "feather-mag-enhanced",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.2,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 3,
+        "unit": "meters"
       },
       {
         "stat": "magazineSize",
@@ -102,22 +437,7 @@
         "unit": "rounds"
       }
     ],
-    "note": "Only compatible weapon shown; exact Ares RG pairing."
-  },
-  {
-    "weaponSlug": "ares-rg",
-    "modSlug": "mega-drive-deluxe",
-    "verificationStatus": "live_verified",
-    "verifiedOn": "2026-07-18",
-    "sourceType": "in_game_screenshot",
-    "effects": [
-      {
-        "stat": "magazineSize",
-        "delta": 4,
-        "unit": "rounds"
-      }
-    ],
-    "note": "Only compatible weapon shown; exact Ares RG pairing."
+    "note": "Live tooltip captured on the named weapon."
   },
   {
     "weaponSlug": "stryder-m1t",
@@ -136,6 +456,146 @@
   },
   {
     "weaponSlug": "twin-tap-hbr",
+    "modSlug": "combat-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.39,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 8,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "combat-mag-superior",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.55,
+        "unit": "seconds"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 12,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "darksight-scope-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.02,
+        "unit": "degrees"
+      },
+      {
+        "stat": "aimAssist",
+        "delta": 0.29,
+        "unit": "degrees"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.2,
+        "unit": "multiplier"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "darksight-scope-superior",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.06,
+        "unit": "degrees"
+      },
+      {
+        "stat": "aimAssist",
+        "delta": 0.59,
+        "unit": "degrees"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.2,
+        "unit": "multiplier"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "feather-mag-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.16,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 7,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 8,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "feather-mag-enhanced",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "reloadSpeed",
+        "delta": -0.08,
+        "unit": "seconds"
+      },
+      {
+        "stat": "range",
+        "delta": 4,
+        "unit": "meters"
+      },
+      {
+        "stat": "magazineSize",
+        "delta": 4,
+        "unit": "rounds"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
     "modSlug": "hi-cap-mag-deluxe",
     "verificationStatus": "live_verified",
     "verifiedOn": "2026-07-18",
@@ -150,18 +610,148 @@
     "note": "User-confirmed live value."
   },
   {
-    "weaponSlug": "br33-volley-rifle",
-    "modSlug": "hi-cap-mag-deluxe",
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "hi-zoom-optic-deluxe",
     "verificationStatus": "live_verified",
     "verifiedOn": "2026-07-18",
     "sourceType": "in_game_screenshot",
     "effects": [
       {
+        "stat": "adsSpread",
+        "delta": -0.06,
+        "unit": "degrees"
+      },
+      {
+        "stat": "range",
+        "delta": 14,
+        "unit": "meters"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 1.6,
+        "unit": "multiplier"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "rangefinder-optic-deluxe",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.02,
+        "unit": "degrees"
+      },
+      {
+        "stat": "movingInaccuracy",
+        "delta": -18.2,
+        "unit": "percent"
+      },
+      {
+        "stat": "range",
+        "delta": 10,
+        "unit": "meters"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.6,
+        "unit": "multiplier"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "rangefinder-optic-superior",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "adsSpread",
+        "delta": -0.06,
+        "unit": "degrees"
+      },
+      {
+        "stat": "movingInaccuracy",
+        "delta": -27.3,
+        "unit": "percent"
+      },
+      {
+        "stat": "range",
+        "delta": 24,
+        "unit": "meters"
+      },
+      {
+        "stat": "adsZoom",
+        "delta": 0.6,
+        "unit": "multiplier"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "stabilizing-mag-enhanced",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "recoil",
+        "delta": -6.2,
+        "unit": "percent"
+      },
+      {
         "stat": "magazineSize",
-        "delta": 30,
+        "delta": 8,
         "unit": "rounds"
       }
     ],
-    "note": "User-confirmed live value."
+    "note": "Live tooltip captured on the named weapon."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "steady-barrel-superior",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "movingInaccuracy",
+        "delta": -81.8,
+        "unit": "percent"
+      },
+      {
+        "stat": "equipSpeed",
+        "delta": -0.21,
+        "unit": "seconds"
+      },
+      {
+        "stat": "recoil",
+        "delta": -28.0,
+        "unit": "percent"
+      }
+    ],
+    "note": "Moving inaccuracy is reduced to zero on Twin Tap HBR."
+  },
+  {
+    "weaponSlug": "twin-tap-hbr",
+    "modSlug": "tru-shot-barrel-enhanced",
+    "verificationStatus": "live_verified",
+    "verifiedOn": "2026-07-18",
+    "sourceType": "in_game_screenshot",
+    "effects": [
+      {
+        "stat": "aimAssist",
+        "delta": 0.29,
+        "unit": "degrees"
+      }
+    ],
+    "note": "Live tooltip captured on the named weapon."
   }
 ]

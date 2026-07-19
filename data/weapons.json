@@ -486,7 +486,8 @@
       "magazineSize",
       "adsZoom"
     ],
-    "description": "Semiautomatic precision rifle with three-round burst fire."
+    "description": "Semiautomatic precision rifle with three-round burst fire.",
+    "roundsPerFiringCycle": 3
   },
   {
     "slug": "stryder-m1t",
@@ -540,7 +541,8 @@
       "magazineSize",
       "adsZoom"
     ],
-    "description": "Fine-tuned semiautomatic precision rifle."
+    "description": "Fine-tuned semiautomatic precision rifle.",
+    "roundsPerFiringCycle": 1
   },
   {
     "slug": "twin-tap-hbr",
@@ -595,7 +597,8 @@
       "adsZoom"
     ],
     "description": "Burst-fire heavy ballistic precision rifle with dual-round delivery system.",
-    "ammoType": "Ballistic"
+    "ammoType": "Ballistic",
+    "roundsPerFiringCycle": 2
   },
   {
     "slug": "ares-rg",

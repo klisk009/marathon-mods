@@ -1,0 +1,15 @@
+{
+  "status": "demo_configurable",
+  "verifiedOn": "2026-07-18",
+  "default": {
+    "level": 65,
+    "currentXp": 52500,
+    "levelThreshold": 68000,
+    "availableEnergy": 0
+  },
+  "notes": [
+    "The screenshots confirm Level 65 and a displayed 68K threshold.",
+    "The app does not assume every future level uses 68K XP.",
+    "Users can edit the current threshold before calculating."
+  ]
+}
